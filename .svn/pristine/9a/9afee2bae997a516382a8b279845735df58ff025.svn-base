@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pub_backgroud_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="标题"
+                android:textColor="@color/tvc6" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/bg_edittext_normal"
+                android:fadeScrollbars="false"
+                android:gravity="top"
+                android:singleLine="true"
+                android:hint="请输入消息标题"
+                android:paddingLeft="10dp"
+                android:maxLength="100"
+                android:scrollbars="vertical"
+                android:textColor="@color/tvc6"
+                android:textColorHint="@color/tvcc"
+                android:textSize="@dimen/textsize_14" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pub_backgroud_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="消息内容"
+                android:textColor="@color/tvc6" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <WebView
+                    android:id="@+id/et_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pub_backgroud_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="添加附件(选择文件或图片)"
+                android:textColor="@color/tvc6" />
+
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <com.pub.widget.MyGridView
+                    android:id="@+id/mGridView_Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/parent_margin"
+                    android:background="@color/white"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:visibility="gone"
+                    android:dividerHeight="0dp"
+                    android:horizontalSpacing="@dimen/parent_margin"
+                    android:numColumns="4"
+                    android:verticalSpacing="@dimen/parent_margin" />
+                <LinearLayout
+                    android:layout_below="@id/mGridView_Image"
+                    android:id="@+id/ll_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    android:dividerHeight="@dimen/line_height"></LinearLayout>
+
+                <ImageView
+                    android:layout_below="@id/ll_file"
+                    android:id="@+id/iv_pickPhotoFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/daiguanjia_link" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pub_backgroud_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="通知人"
+                android:textColor="@color/tvc6" />
+
+            <com.pub.widget.MyGridView
+                android:id="@+id/mGridView_People"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/white"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:paddingLeft="10dp"
+                android:dividerHeight="0dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:verticalSpacing="5dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

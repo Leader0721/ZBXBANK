@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dynamic_message_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical"
+    tools:context="com.zbxn.main.activity.dynamic.DynamicMessageDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#49c2fa"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_userHead"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_margin="@dimen/parent_margin_large"
+                    android:src="@mipmap/userhead_img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/parent_margin_large"
+                    android:layout_marginRight="@dimen/parent_margin_large"
+                    android:layout_marginTop="@dimen/parent_margin_large"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="欢迎来到国务院视察工作，来个按摩怎么样？"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize_16" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/parent_margin_large"
+                        android:text="发布时间：2017-03-16 14:23"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize_14" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/web_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp" />
+
+            <!--<fragment-->
+            <!--android:id="@+id/mCommentFragment"-->
+            <!--android:name="com.zbxn.main.activity.dynamic.comment.CommentFragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+            <com.pub.widget.NoScrollListview
+                android:id="@+id/mCommentListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/parent_margin"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edittext_shape"
+            android:hint="写评论..."
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@color/tvc3"
+            android:textColorHint="@color/tvcc"
+            android:textSize="@dimen/textsize_14" />
+
+        <TextView
+            android:id="@+id/tv_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/parent_margin"
+            android:gravity="center|left"
+            android:padding="5dp"
+            android:text="发表"
+            android:textColor="@color/tvc6"
+            android:textSize="@dimen/textsize_16" />
+    </LinearLayout>
+</RelativeLayout>

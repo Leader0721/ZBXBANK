@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_company_request"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical"
+    tools:context="com.zbxn.main.activity.dynamic.StaffRequestActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pub.widget.pulltozoomview.PullToZoomScrollViewEx
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:contentView="@layout/view_contacts_detail_content"
+            app:zoomView="@layout/view_contacts_detail_zoomview" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_toolbar_height"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/parent_margin"
+                android:paddingRight="@dimen/parent_margin"
+                android:src="@mipmap/toolbar_back_white" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_add_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/parent_margin"
+                android:paddingRight="@dimen/parent_margin"
+                android:text="加为好友"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/pub_line_color"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_achieve"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_16"
+            android:text="同意"
+            android:textColor="@color/seekbarorange" />
+
+        <ImageView
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/parent_margin"
+            android:layout_marginTop="@dimen/parent_margin"
+            android:background="@color/pub_line_color" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textSize="@dimen/textsize_16"
+            android:textColor="@color/bg_textview_blue" />
+    </LinearLayout>
+
+</LinearLayout>

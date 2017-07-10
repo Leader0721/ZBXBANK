@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_setting_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical"
+    tools:context="com.zbxn.main.activity.memberCenter.SettingMessageActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:layout_marginTop="@dimen/parent_margin_large"
+        android:background="@drawable/bg_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/parent_margin_top"
+        android:paddingLeft="13dp"
+        android:paddingTop="@dimen/parent_margin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="接受官方平台消息"
+            android:textColor="@color/tvc3" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/tb_message"
+            android:layout_width="54dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/textsize_10"
+            toggle:tbBorderWidth="1dp"
+            toggle:tbOffBorderColor="#d7d2d2"
+            toggle:tbOffColor="#efefee"
+            toggle:tbOnColor="@color/main_tab_text_blue"
+            toggle:tbSpotColor="@color/pub_backgroud_color"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:layout_marginTop="@dimen/parent_margin_large"
+        android:background="@drawable/bg_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/parent_margin_top"
+        android:paddingLeft="13dp"
+        android:paddingTop="@dimen/parent_margin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="基本动态推送"
+            android:textColor="@color/tvc3" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/tb_basic"
+            android:layout_width="54dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/textsize_10"
+            toggle:tbBorderWidth="1dp"
+            toggle:tbOffBorderColor="#d7d2d2"
+            toggle:tbOffColor="#efefee"
+            toggle:tbOnColor="@color/main_tab_text_blue"
+            toggle:tbSpotColor="@color/pub_backgroud_color"/>
+    </LinearLayout>
+    <TextView
+        android:background="@color/pub_line_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:background="@drawable/bg_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/parent_margin_top"
+        android:paddingLeft="13dp"
+        android:paddingTop="@dimen/parent_margin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="更新动态推送"
+            android:textColor="@color/tvc3" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/tb_update"
+            android:layout_width="54dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/textsize_10"
+            toggle:tbBorderWidth="1dp"
+            toggle:tbOffBorderColor="#d7d2d2"
+            toggle:tbOffColor="#efefee"
+            toggle:tbOnColor="@color/main_tab_text_blue"
+            toggle:tbSpotColor="@color/pub_backgroud_color"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:layout_marginTop="@dimen/parent_margin_large"
+        android:background="@drawable/bg_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/parent_margin_top"
+        android:paddingLeft="13dp"
+        android:paddingTop="@dimen/parent_margin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="声音"
+            android:textColor="@color/tvc3" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/tb_sound"
+            android:layout_width="54dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/textsize_10"
+            toggle:tbBorderWidth="1dp"
+            toggle:tbOffBorderColor="#d7d2d2"
+            toggle:tbOffColor="#efefee"
+            toggle:tbOnColor="@color/main_tab_text_blue"
+            toggle:tbSpotColor="@color/pub_backgroud_color"/>
+    </LinearLayout>
+    <TextView
+        android:background="@color/pub_line_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:background="@drawable/bg_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/parent_margin_top"
+        android:paddingLeft="13dp"
+        android:paddingTop="@dimen/parent_margin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="震动"
+            android:textColor="@color/tvc3" />
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/tb_vibration"
+            android:layout_width="54dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/textsize_10"
+            toggle:tbBorderWidth="1dp"
+            toggle:tbOffBorderColor="#d7d2d2"
+            toggle:tbOffColor="#efefee"
+            toggle:tbOnColor="@color/main_tab_text_blue"
+            toggle:tbSpotColor="@color/pub_backgroud_color"/>
+    </LinearLayout>
+
+
+</LinearLayout>

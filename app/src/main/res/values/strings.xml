@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_guider_page1">每个人都握着移动的数据</string>
+    <string name="app_guider_page2">实现安全扁平化的安全协作</string>
+    <string name="app_guider_page3">工作任务可视化，拥有自己的专属节奏</string>
+    <string name="app_guider_page4">享受工作的每一分</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_bottom_personal">个人中心</string>
+    <string name="main_bottom_message">消息</string>
+    <string name="main_bottom_tools">应用</string>
+    <string name="main_bottom_contact">通讯录</string>
+
+    <string name="contacts_search_hint">姓名/电话/部门</string>
+
+    <!--设置-语言切换-中文-->
+    <string name="setting_language_chinese">中文</string>
+</resources>

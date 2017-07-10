@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <View
+        android:background="@color/pub_line_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"/>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="是否通过审核 ? "
+            android:textColor="@color/tvc6"
+            android:textSize="@dimen/textsize_14" />
+
+        <TextView
+            android:id="@+id/tv_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/selector_check_single"
+            android:drawablePadding="@dimen/parent_margin_top"
+            android:paddingLeft="@dimen/parent_margin"
+            android:paddingRight="@dimen/parent_margin"
+            android:text="通过"
+            android:textColor="@color/tvc6" />
+        <TextView
+            android:id="@+id/tv_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/selector_check_single"
+            android:drawablePadding="@dimen/parent_margin_top"
+            android:paddingLeft="@dimen/parent_margin"
+            android:paddingRight="@dimen/parent_margin"
+            android:text="拒绝"
+            android:textColor="@color/tvc6" />
+
+    </LinearLayout>
+
+    <!--嵌套scrollView 防止软件盘弹出时把toolbar顶出屏幕-->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="审核意见:"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/tvc6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_edittext_shape"
+            android:fadeScrollbars="false"
+            android:gravity="top"
+            android:hint="点击填写审核意见"
+            android:lineSpacingExtra="4dp"
+            android:maxLength="1000"
+            android:minLines="4"
+            android:padding="@dimen/parent_margin"
+            android:scrollbars="vertical"
+            android:textColor="@color/tvc6"
+            android:textColorHint="@color/tvcc"
+            android:textSize="@dimen/textsize_13" />
+    </ScrollView>
+
+    <View
+        android:layout_marginTop="5dp"
+        android:background="@color/pub_line_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_certain"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ripple"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="确定"
+            android:textColor="@color/tvc6" />
+        <View
+            android:background="@color/pub_line_color"
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ripple"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="取消"
+            android:textColor="@color/tvc6" />
+    </LinearLayout>
+
+
+</LinearLayout>

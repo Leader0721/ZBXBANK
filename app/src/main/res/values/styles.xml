@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- 底线和光标为亮色的Edittext -->
+    <style name="app_edittext_light" parent="app_theme.NoActionBar">
+        <item name="colorControlNormal">#B2DFDB</item>
+        <item name="colorControlActivated">#B2DFDB</item>
+    </style>
+
+    <!-- Layout框样式 普通 应用于列表listitem背景，跳转时间view背景 -->
+    <style name="layout_style" parent="app_theme.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_ripple</item>
+        <item name="android:paddingBottom">@dimen/parent_margin</item>
+        <item name="android:paddingTop">@dimen/parent_margin</item>
+        <item name="android:paddingLeft">@dimen/parent_margin</item>
+        <item name="android:paddingRight">@dimen/parent_margin</item>
+    </style>
+
+    <!-- Layout框样式 定义高度 个人中心框背景 -->
+    <style name="layout_style_height" parent="app_theme.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/kuang_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_ripple</item>
+        <item name="android:paddingLeft">@dimen/parent_margin</item>
+        <item name="android:paddingRight">@dimen/parent_margin</item>
+    </style>
+
+    <style name="MyDateDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!--用activity模拟dialog-->
+    <style name="dialogActivity">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--popupwindow的style-->
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <!-- 沾满全屏的dialog 用于蒙版引导适配view位置 -->
+    <style name="Dialog_Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

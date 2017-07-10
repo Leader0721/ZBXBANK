@@ -1,0 +1,147 @@
+package com.pub.utils;
+
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.widget.EditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Created by Leader on 2017/5/22.
+ * 校验
+ */
+public class ValidationUtil {
+
+    /**
+     * 手机号验证
+     *
+     * @param str
+     * @return 验证通过返回true
+     */
+    public static boolean isMobile(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("^[1][3,4,5,7,8][0-9]{9}$");
+        Matcher m = p.matcher(str);
+        return m.matches();
+    }
+
+    /**
+     * 验证数字
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isNumeric(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("^[0-9]*$");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 验证字母与数字的组合
+     *
+     * @param str
+     * @return
+     */
+    public static boolean letterdigit(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,10}$");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 验证字母
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isABC(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("^[A-Za-z]+$");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 验证数字+字母
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isABCNumber(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("^[A-Za-z0-9]+$");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 验证汉字
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isChineseCharacters(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern.compile("[\u4e00-\u9fa5]+");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 验证邮箱
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isMailbox(String str) {
+        if (str == null || str.trim().length() == 0)
+            return false;
+
+        Pattern p = Pattern
+                .compile("^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
+        Matcher m = p.matcher(str);
+
+        return m.matches();
+    }
+
+    /**
+     * 禁止EditText输入特殊字符 不保证全部，如有需要，请自行添加
+     *
+     * @param editText
+     */
+    public static void setEditTextInhibitInputSpeChat(EditText editText) {
+
+        InputFilter filter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                String speChat = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？¥£€·￡〔\\\\《＆～「＊＄％＃」》〕]";
+                Pattern pattern = Pattern.compile(speChat);
+                Matcher matcher = pattern.matcher(source.toString());
+                if (matcher.find()) return "";
+                else return null;
+            }
+        };
+        editText.setFilters(new InputFilter[]{filter});
+    }
+}

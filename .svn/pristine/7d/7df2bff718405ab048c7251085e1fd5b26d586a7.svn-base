@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:>
+<head>
+    <meta charset="utf-8">
+    <title>需求量测算</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popModal.css"/>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/formText.js" type="text/javascript"></script>
+    <script src="js/popModal.js" type="text/javascript"></script>
+    <script src="js/compute.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getJsonData() {
+            var jsonData = getJsonByForm();
+
+            return jsonData;
+        }
+
+        function saveData(submitType) {
+            if (!checkRegOfBank()) {
+                submitObject(getJsonData(), "ChinaRCB/AddInvestigateFive", 0, 1);
+            } else {
+                alertMsg("请修改不符合规则的内容");
+            }
+        }
+
+        $(function () {
+            initFormFocus();
+            initSubmitStatus();
+        });
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar mui-bar-nav">
+    <a class="mui-icon mui-pull-left" style="color: white;margin-left:4px;" href="javascript:goBack();"><img src="img/toolbar_back_white.png" width="24" height="24"></a>
+    <h1 class="mui-title">需求量测算</h1>
+    <a id="saveStatus" class="mui-icon mui-btn-blue mui-btn-link mui-pull-right"
+       style="color: white; margin-right: 10px; margin-top:-7px"
+       href="javascript:saveData();"><img src="img/save.png" width="20" height="20"></a>
+</header>
+<form name="form">
+    <article class="content">
+        <section id="financeInfo">
+            <div class="information" style="margin-top: 0;">
+                <p>一、财务指标</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_info">
+                <li>指标名称</li>
+                <li>本年度</li>
+                <li>上年度</li>
+                <li>平均值</li>
+            </ul>
+            <div class="content_text_four">
+                <span>销售收入</span>
+                <input type="number" step="0.01" id="MainTakeIn1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainTakeIn2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainTakeIn3"/>
+            </div>
+            <div class="content_text_four">
+                <span>销售成本</span>
+                <input type="number" step="0.01" id="MainCost1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainCost2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainCost3"/>
+            </div>
+            <div class="content_text_four">
+                <span>销售利润</span>
+                <input type="number" step="0.01" id="MainIncome1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainIncome2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="MainIncome3"/>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_info">
+                <li>指标名称</li>
+                <li>期初金额</li>
+                <li>期末金额</li>
+                <li>平均值</li>
+            </ul>
+            <div class="content_text_four">
+                <span>应收账款</span>
+                <input type="number" step="0.01" id="AccountsReceivable1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="AccountsReceivable2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="AccountsReceivable3"/>
+            </div>
+            <div class="content_text_four">
+                <span>预收账款</span>
+                <input type="number" step="0.01" id="DepositReceived1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="DepositReceived2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="DepositReceived3"/>
+            </div>
+            <div class="content_text_four">
+                <span>存货</span>
+                <input type="number" step="0.01" id="Stock1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="Stock2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="Stock3"/>
+            </div>
+            <div class="content_text_four">
+                <span>预付账款</span>
+                <input type="number" step="0.01" id="PrepaidAccount1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="PrepaidAccount2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="PrepaidAccount3"/>
+            </div>
+            <div class="content_text_four">
+                <span>应付账款</span>
+                <input type="number" step="0.01" id="PayableAccount1" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="PayableAccount2" onkeyup="ctDemandMeasure()"/>
+                <input type="number" step="0.01" id="PayableAccount3"/>
+            </div>
+        </section>
+
+        <div class="information" id="workingCapital">
+            <p>二、营运资金量测算</p>
+        </div>
+        <p style="color: #cd0200;text-align: left;padding-left: 10px">!根据实际情况和未来发展情况，并考虑一定的保险系数调整后的预测数据</p>
+
+        <div style="height: 1rem;"></div>
+        <ul class="header_inf">
+            <li>指标名称</li>
+            <li>本年度</li>
+            <li>预测值</li>
+        </ul>
+        <div class="content_text">
+            <span>存货周转天数</span>
+            <input type="number" step="0.01" id="StockTurnoverDays1"/>
+            <input type="number" step="0.01" id="StockTurnoverDays2" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="content_text">
+            <span>应收账款周转天数</span>
+            <input type="number" step="0.01" id="AccountsReceivableTurnoverDays1"/>
+            <input type="number" step="0.01" id="AccountsReceivableTurnoverDays2" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="content_text">
+            <span>应付账款周转天数</span>
+            <input type="number" step="0.01" id="PayableAccountTurnoverDays1"/>
+            <input type="number" step="0.01" id="PayableAccountTurnoverDays2" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="content_text">
+            <span>预付账款周转天数</span>
+            <input type="number" step="0.01" id="PrepaidAccountTurnoverDays1"/>
+            <input type="number" step="0.01" id="PrepaidAccountTurnoverDays2"/>
+        </div>
+        <div class="content_text">
+            <span>预收账款周转天数</span>
+            <input type="number" step="0.01" id="DepositReceivedTurnoverDays1"/>
+            <input type="number" step="0.01" id="DepositReceivedTurnoverDays2"/>
+        </div>
+        <div class="content_text">
+            <span>营运资金周转次数</span>
+            <input type="number" id="WorkingCapitalTurnoverDays1" step="0.01"/>
+            <input type="number" id="WorkingCapitalTurnoverDays2" step="0.01"/>
+        </div>
+        <div class="content_text">
+            <span>上年度销售利润率</span>
+            <div class="ratio"><input type="number" id="LastYearMainIncomRate1"/><label>%</label></div>
+            <div class="ratio" style="border-right: 0"> <input type="number" id="LastYearMainIncomRate2"/><label>%</label></div>
+        </div>
+        <div class="content_text">
+            <span>预计销售收入增长率</span>
+            <div class="ratio"><input type="number" id="ForcastIncreaseRate1" onkeyup="ctDemandMeasure()"/><label>%</label></div>
+            <div class="ratio" style="border-right: 0"><input type="number" id="ForcastIncreaseRate2" /><label>%</label></div>
+        </div>
+        <div class="content_text">
+            <span>营运资金量</span>
+            <input type="number" id="WorkingCapital1" step="0.01"/>
+            <input type="number" id="WorkingCapital2" step="0.01"/>
+        </div>
+
+        <div class="information" id="demandEstimation">
+            <p>三、新增流动资金贷款需求额度估算</p>
+        </div>
+        <div class="input_normal">
+            <label>借款人自有资金</label><input class="right_input" type="number" step="0.01" id="InternalFund" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="input_normal">
+            <label>现有流动资金贷款</label><input class="right_input" type="number" step="0.01" id="FlowFundLoan" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="input_normal">
+            <label>其他渠道提供的营运资金</label><input class="right_input" type="number" step="0.01"
+                                            id="OtherWorkingCapital" onkeyup="ctDemandMeasure()"/>
+        </div>
+        <div class="input_normal">
+            <label>调整前测算的流贷需求</label><input class="right_input" type="number" id="LoanDemandBefore" step="0.01"/>
+        </div>
+        <div class="input_normal">
+            <label>调整后测算的流贷需求</label><input class="right_input" type="number" id="LoanDemandAfter" step="0.01"/>
+        </div>
+        <div class="location">
+            <div class="basic">
+                <div><a href="javascript:scrollToPlace('#financeInfo')">财务指标</a></div>
+            </div>
+            <div class="basic survey">
+                <div><a href="javascript:scrollToPlace('#workingCapital')">营运资金</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#demandEstimation')">需求估算</a></div>
+            </div>
+            <a id="callPhone"><img class="basic phone" src="img/phone.png"/></a>
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        positionByScroll();
+        //显示div
+        $(".location").show(300);
+        //				存储当前滚动高度
+        var Page = window.pageYOffset;
+        setTimeout(function () {
+            //					判断当前高度是否和存储的高度一致
+            if (Page == window.pageYOffset) {
+                //						隐藏div
+                $(".location").hide();
+            }
+        }, 4000);
+    });
+    initPositionById("financeInfo","workingCapital","demandEstimation");
+</script>
+</body>
+</html>

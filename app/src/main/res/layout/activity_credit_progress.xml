@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/background_apply2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/parent_margin"
+        android:background="@color/pub_backgroud_color"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.pub.widget.stepview.StepView
+            android:id="@+id/mStepView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/parent_margin" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/parent_margin_large"
+        android:text="温馨提示:移动端填写资料比较繁琐，可在网页端填写"
+        android:textColor="@color/tvc9"
+        android:textSize="@dimen/textsize_12" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/selector_btn_radius_blue"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="@dimen/parent_margin"
+            android:text="借款人"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_16" />
+    </LinearLayout>
+
+</LinearLayout>

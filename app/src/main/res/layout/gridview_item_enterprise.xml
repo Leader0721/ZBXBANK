@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.pub.widget.FilletImageView
+                android:id="@+id/iv_enterpriseIcon"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/attachment_no"
+                zhy:borderRadius="5dp"
+                zhy:type="round" />
+            <!--<com.pub.widget.FilletImageView-->
+                <!--android:id="@+id/iv_enterpriseIcon"-->
+                <!--android:layout_width="140dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@mipmap/attachment_no" />-->
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/iv_enterpriseIcon"
+                android:layout_alignRight="@id/iv_enterpriseIcon"
+                android:layout_margin="@dimen/parent_margin_top"
+                android:text=""
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/pub_line_color" />
+
+        <TextView
+            android:id="@+id/tv_imageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="企业报表"
+            android:textColor="@color/tvc6"
+            android:textSize="@dimen/textsize_14" />
+    </LinearLayout>
+</LinearLayout>

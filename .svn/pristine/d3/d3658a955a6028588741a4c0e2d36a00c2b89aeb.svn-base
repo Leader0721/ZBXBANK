@@ -1,0 +1,1124 @@
+/*!*清空样式*!*/
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea {
+    margin: 0;
+    padding: 0
+}
+
+/*公共样式*/
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    /*font: 12px "宋体", "Arial Narrow", HELVETICA;*/
+    background: #fff;
+}
+
+/*设置内边框*/
+/** {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}*/
+
+a {
+    color: #172c45;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+.ind {
+    text-indent: 2em
+}
+
+.ind10 {
+    text-indent: 10px;
+}
+
+.noborder {
+    border: 0;
+}
+
+/*input {*/
+/*outline: none;*/
+/*}*/
+
+textarea {
+    outline: none;
+    resize: none;
+}
+
+a:hover {
+    color: #31A4E5;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/*头部*/
+/*header {*/
+/*width: 100%;*/
+/*height: 10%;*/
+/*background: #454b57;*/
+/*position: fixed;*/
+/*top: 0;*/
+/*z-index: 5000;*/
+/*text-align: center;*/
+/*}*/
+
+/*header img {*/
+/*margin-top: 1.2rem;*/
+/*margin-left: 1rem;*/
+/*float: left;*/
+/*}*/
+
+.title {
+    float: left;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 800;
+    width: 78%;
+    text-align: center;
+    margin-top: 1.3rem;
+}
+
+.save {
+    float: left;
+    color: #fff;
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin-top: 1.3rem;
+}
+
+/*内容区域*/
+article {
+    /*height: 90%;*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*top: 10%;*/
+}
+
+.content {
+    /*标题栏高度*/
+    padding-top: 44px;
+}
+
+.content_multi {
+    /*标题栏高度+tab高度*/
+    padding-top: 88px;
+}
+
+.information {
+    width: 99%;
+    margin-top: 1.5rem;
+    height: 3rem;
+    background: #f1f4f9;
+    border-left: 2px solid #31A4E5;
+}
+
+.information p {
+    line-height: 3rem;
+    height: 3rem;
+    color: #31A4E5;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 0.7rem;
+}
+
+.names {
+    float: left;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    width: 23%;
+    padding-left: 6%;
+}
+
+.percentLabel {
+    margin-top: 2px;
+}
+
+/*普通输入框div样式*/
+.input_normal {
+    position: relative;
+    clear: left;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.input_normal label {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.1;
+    float: left;
+    width: 35%;
+    padding: 10px;
+    color: #8f8f94;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input_normal .right_input {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1rem;
+    background: #efeff4;
+    border-radius: 5px;
+    float: right;
+    width: 65%;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: #efeff4 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    outline: none;
+}
+
+.input_normal .right_input_date {
+    float: left;
+    height: 2rem;
+    width: 50%;
+    font-size: 0.9rem;
+    line-height: 2rem;
+}
+
+/*.right_input{
+    width: 57%;
+    float: left;
+    height: 2.5rem;
+    border: 0;
+    background: #f1f4f9;
+    border-radius: 5px;
+    padding-left:2%;
+}*/
+
+.input_normal .percent_input {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1rem;
+    background: #efeff4;
+    border-radius: 5px;
+    float: left;
+    width: 20%;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: #efeff4 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    outline: none;
+}
+
+.left_name {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.1;
+    float: left;
+    width: 35%;
+    padding: 10px 10px
+}
+
+.input_normal .right_textArea {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1rem;
+    width: 65%;
+    height: 3rem;
+    border: 0;
+    background: #efeff4;
+    border-radius: 5px;
+    padding: 1%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.inputEmptyBorder {
+    border: #f07947 1px solid !important;
+    -webkit-animation-name: fadeOut; /*动画名称*/
+    -webkit-animation-duration: 0.2s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+}
+
+.redStar {
+    color: red;
+    font-size: 2rem;
+    float: left;
+    line-height: 2.8rem;
+    width: 1rem;
+}
+
+.history {
+    margin-left: 5%;
+    width: 21%;
+    height: 2rem;
+    float: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 5%;
+    text-align: right;
+}
+
+.history_input {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1rem;
+    height: 4rem;
+    float: left;
+    border: 0;
+    background: #efeff4;
+    border: #efeff4 1px;
+    border-radius: 5px;
+    width: 65%;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*基本调查情况页面--start*/
+.header_inf {
+    width: 85%;
+    height: 2rem;
+    margin: 0 auto;
+    background: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.header_inf li {
+    float: left;
+    width: 33%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #656565;
+    font-size: 0.9rem;
+}
+
+.header_inf li input {
+    width: 100%;
+    height: 2rem;
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+    line-height: 2rem;
+    color: #656565;
+    font-size: 0.9rem;
+}
+
+.dateSelect {
+    border: 0;
+    background-color: transparent;
+    font-size: 0.9rem;
+    height: 2rem;
+    text-align: center;
+
+    appearance:none;  /*下拉框去掉右侧图标*/
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.content_text {
+    height: 3rem;
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    text-align: center;
+}
+
+.content_text span {
+    width: 33%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_text input {
+    width: 33%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.content_text input:nth-last-child(1) {
+    border-right: 0;
+}
+
+.content_text select {
+    width: 24%;
+}
+
+.content_text .ratio {
+    width: 33%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.content_text .ratio input {
+    width: 70%;
+    height: 3rem;
+    border: 0;
+    float: left;
+    line-height: 3rem;
+    text-align: right;
+}
+
+.right_select {
+    height: 2rem;
+    font-size: 1rem;
+    width: 5rem;
+    font-size: 0.9rem;
+}
+
+.header_info {
+    width: 85%;
+    height: 2rem;
+    margin: 0 auto;
+    background: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.header_info li {
+    float: left;
+    width: 25%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #656565;
+    font-size: 0.9rem;
+}
+
+.header_info li input {
+    width: 80%;
+    height: 2rem;
+    border: 0;
+    text-align: center;
+    color: black;
+    font-size: 0.9rem;
+    background-color: transparent;
+}
+
+.content_text_four {
+    height: 3rem;
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+.content_text_four span {
+    width: 24%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_text_four input {
+    width: 24%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.content_text_four input:nth-last-child(1) {
+    border-right: 0;
+}
+
+.content_text_four .selectli {
+    width: 25%;
+    float: left;
+    border-right: 1px solid #e4e4e4;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.content_text_four .selectli select {
+    width: 80%;
+}
+
+.content_text_ {
+    height: 3rem;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+.content_text_ span {
+    width: 24%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.content_text_ input {
+    width: 12%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.content_text_ input:nth-last-child(1) {
+    border-right: 0;
+}
+
+.header_info_height {
+    width: 90%;
+    height: 4rem;
+    margin: 0 auto;
+    background: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.header_info_height li {
+    float: left;
+    width: 25%;
+    height: 4rem;
+    text-align: center;
+    color: #656565;
+    font-size: 0.7rem;
+}
+
+.header_info_height li:nth-child(1) {
+    line-height: 4rem;
+}
+
+.liBottomTop {
+    width: 100%;
+    float: left;
+    height: 2rem;
+    padding-top: 0.5rem;
+}
+
+.liBottomBox {
+    width: 45%;
+    height: 2rem;
+    float: left;
+}
+
+/*基本调查情况页面--end*/
+
+/*借款人申请书--start*/
+.header_loan {
+    width: 65%;
+    height: 2rem;
+    margin: 0 auto;
+    background: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    float: right;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.header_loan li {
+    float: left;
+    width: 50%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #656565;
+    font-size: 0.9rem;
+}
+
+.content_text_loan {
+    height: 3rem;
+    width: 99.5%;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    text-align: center;
+    float: left;
+
+}
+
+.content_text_loan input {
+    width: 47%;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    line-height: 3rem;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+.content_text_loan input:nth-last-child(1) {
+    border-right: 0;
+}
+
+.lineGray {
+    height: 1px;
+    margin: 1rem 0;
+    border-top: 1px solid #e4e4e4;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*借款人申请书--end*/
+
+/*功能列表界面--start*/
+.listBody {
+    background: #f1f4f9;
+}
+
+.listBody article {
+    height: 48rem;
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*top: 10%;*/
+    /*border: 1px solid #e4e4e4;*/
+    /*background-color: white;*/
+}
+
+.listBody section {
+
+    background-color: white;
+}
+
+.listHeader {
+    border-bottom: 1px solid #e4e4e4;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    padding-left: 1.5rem;
+}
+
+.listHeaderTitle {
+    float: left;
+    width: 85%;
+}
+
+.angleBrackets {
+    float: left;
+    font-size: 1rem;
+    width: 10%;
+    text-align: center;
+}
+
+.childContent {
+    display: none;
+}
+
+.listChild {
+    float: none;
+    height: 3rem;
+    line-height: 3rem;
+    margin-left: 3rem;
+    color: #586b96;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.listChild:nth-last-child(2) {
+    border-bottom: 0;
+}
+
+.listChild img {
+    line-height: 3rem;
+    display: inline;
+    float: right;
+    padding-right: 5%;
+    padding-top: 1rem;
+}
+
+.listLine {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.bottomDivByButton {
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.submitButton {
+    background-color: #31A4E5;
+    width: 80%;
+    height: 3rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 30px;
+    -webkit-appearance: none;
+}
+
+.bottomReview {
+    background-color: white;
+    height: 40%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    z-index: 5000;
+    opacity: 1;
+    background-position: top;
+    background-repeat: repeat;
+    color: #656565;
+}
+
+.bottomReview .item {
+    height: 20%;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.rightItem {
+    float: none;
+    margin-left: 3rem;
+}
+
+.rightItem div {
+    width: 4rem;
+    text-align: center;
+    float: left;
+}
+
+.rightItem .input {
+    float: left;
+    line-height: 2.8rem;
+    text-align: right;
+    margin-left: 1rem;
+}
+
+.rightItem .input input[type=radio] {
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0;
+    margin-right: 0.5rem;
+}
+
+.rightItem .input input[type=radio]:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/checkbox_normal.png);
+    background-size: 20px;
+}
+
+.rightItem .input input[type=radio]:checked:after {
+    background: url(../img/checkbox_pressed.png);
+    background-size: 20px;
+}
+
+.sgMiddleItem {
+    height: 50%;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.sgMiddleItem span {
+    height: 20%;
+    text-align: left;
+}
+
+.suggestion textarea {
+    float: none;
+    height: 4rem;
+    width: 90%;
+    margin-left: 0.1rem;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+    margin-top: 1rem;
+}
+
+.sgBottomItem {
+    height: 30%;
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.sgBottomItem div {
+    width: 49.5%;
+    border-right: 1px solid #e4e4e4;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.sgBottomItem p {
+    background-color: transparent;
+    border: 0px;
+    color: #656565;
+    font-size: 1rem;
+    line-height: 4rem;
+    height: 100%;
+    width: 100%;
+}
+
+.foot {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+
+/*功能列表界面--end*/
+
+/*财务报表表格界面--start*/
+.content_text_five {
+    height: 3rem;
+    width: 40rem;
+    border-top: 0;
+}
+
+.content_text_five input {
+    width: 7.8rem;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    text-align: center;
+    outline: none;
+}
+
+#left_div {
+    float: left;
+}
+
+#left_div1 {
+    width: 7.9rem;
+    height: 2rem;
+    border-top: 0;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+#left_div2 {
+    width: 100%;
+    overflow: hidden;
+}
+
+#left_div2 div {
+    width: 7.9rem;
+    height: 2rem;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+#right_div {
+    float: left;
+}
+
+#right_div1 {
+    width: 100%;
+    overflow: hidden;
+}
+
+#right_divx {
+    width: 40rem;
+}
+
+#right_div2 {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#right_table1 {
+    width: 100%;
+}
+
+#right_table1 tr {
+    height: 2rem;
+    width: 40rem;
+    margin: 0 auto;
+    border-top: 0;
+}
+
+#right_table1 th {
+    width: 7.8rem;
+    height: 3rem;
+    border-top: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    float: left;
+    line-height: 3rem;
+    outline: none;
+}
+
+#right_table1 input {
+    width: 7.8rem;
+    height: 3rem;
+    border: 0;
+    border-right: 1px solid #e4e4e4;
+    float: left;
+    font-size: 0.9rem;
+    line-height: 3rem;
+    text-align: center;
+    outline: none;
+    background-color: transparent;
+}
+
+.tableEmptyBorder {
+    -webkit-animation-name: fadeOut; /*动画名称*/
+    -webkit-animation-duration: 0.2s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+    -moz-box-shadow: 1px 1px 0px #f07947 inset, -1px -1px 0px #f07947 inset;
+    -webkit-box-shadow: 1px 1px 0px #f07947 inset, -1px -1px 0px #f07947 inset;
+    box-shadow: 1px 1px 0px #f07947 inset, -1px -1px 0px #f07947 inset;
+    -webkit-appearance: none
+}
+
+/*财务报表表格界面--end*/
+
+/*导航定位*/
+.location {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 17%;
+    height: 70%;
+    width: 15%;
+    margin-right: 2%;
+    z-index: 1;
+}
+
+.basic {
+    height: 3rem;
+    width: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 10%;
+    color: #fff;
+    border: 1px solid #86CEFF;
+}
+
+.basic div {
+    width: 2rem;
+    word-wrap: break-word;
+    word-break: normal;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+.survey {
+    margin-top: 25%;
+    background: #fff;
+    color: #86CEFF;
+}
+
+.people {
+    margin-top: 25%;
+    background: #fff;
+    color: #86CEFF;
+}
+
+.phone {
+    background: #fff;
+    color: #86CEFF;
+    border: 1px solid #ffa439;
+    position: absolute;
+    bottom: 0px;
+    z-index: 500;
+    text-align: center;
+}
+
+.phone img {
+    border-radius: 50%;
+}
+
+.popItem {
+    width: 90%;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    font-weight: 200;
+    font-size: 1rem;
+    border-bottom: 1px solid darkgray;
+    margin: 0 auto;
+}
+
+.popItem:nth-last-child(1) {
+    border: 0;
+}
+
+.dHidden {
+    display: none;
+}
+
+.dHidden img {
+    width: 24px;
+    height: 24px;
+}
+
+/*****财务数据基本信息的tab切换start****/
+.hightHeader {
+    width: 100%;
+    height: 20%;
+    background: #454b57;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+    text-align: center;
+}
+
+.tabBody article {
+    height: 79%;
+    width: 100%;
+    position: absolute;
+    top: 21%;
+}
+
+.tab {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 44px;
+    float: none;
+    background-color: white;
+    text-align: center;
+}
+
+.financial {
+    width: 50%;
+    line-height: 44px;
+    float: left;
+    color: #31A4E5;
+    font-size: 1rem;
+    /*font-weight: 800;*/
+    position: absolute;
+}
+
+.baseData {
+    width: 50%;
+    line-height: 44px;
+    float: left;
+    color: #555555;
+    font-size: 1rem;
+    /*font-weight: 800;*/
+    position: absolute;
+    left: 50%;
+}
+
+.blueLine {
+    background-color: #31A4E5;
+    height: 3px;
+    width: 50%;
+    float: none;
+    position: absolute;
+    top: 40px;
+}
+
+.blueLineBase {
+    background-color: #31A4E5;
+    height: 1px;
+    width: 100%;
+    float: none;
+    position: absolute;
+    top: 43px;
+}
+
+.tabBody .location {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 21%;
+    height: 70%;
+    width: 15%;
+    margin-right: 2%;
+    z-index: 100;
+}
+
+#right_table1 input[type="month"]{
+    appearance:none;  /*下拉框去掉右侧图标*/
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+/*****财务数据基本信息的tab切换end****/
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+    50% {
+        opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+    }
+}

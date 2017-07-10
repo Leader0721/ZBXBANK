@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.pub.widget.ProgressWebView
+        android:id="@+id/webview_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tv_clear"
+        android:gravity="center"
+        android:padding="@dimen/parent_margin"
+        android:text="自动填充"
+        android:textColor="@color/orange"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/parent_margin"
+        android:gravity="center"
+        android:padding="@dimen/parent_margin"
+        android:text="清空"
+        android:textColor="@color/orange"
+        android:visibility="invisible" />
+
+</RelativeLayout>

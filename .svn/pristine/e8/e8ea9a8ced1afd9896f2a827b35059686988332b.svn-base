@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.pub.widget.ArrowRectangleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/parent_margin_top"
+        app:background_color="@color/statusBar_color"
+        app:arrow_offset="25dp">
+
+        <com.pub.widget.MyListView
+            android:id="@+id/mListView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+    </com.pub.widget.ArrowRectangleView>
+
+</LinearLayout>

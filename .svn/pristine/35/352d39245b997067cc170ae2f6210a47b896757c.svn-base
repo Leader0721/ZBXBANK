@@ -1,0 +1,139 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <!-- AppCompat主题 -->
+    <style name="app_theme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/app_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/app_colorPrimaryDark</item>
+        <item name="colorAccent">@color/main_tab_text_blue</item>
+        <item name="actionMenuTextColor">@color/tvc6</item>
+        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+        <item name="toolbarStyle">@style/ACT_toolbarStyle</item>
+        <item name="actionBarStyle">@style/ACT_actionBarStyle</item>
+        <item name="dialogTheme">@style/Theme.AppCompat.Light.Dialog</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
+        <item name="alertDialogStyle">@style/AlertDialog.AppCompat.Light</item>
+        <item name="textColorAlertDialogListItem">@color/abc_primary_text_material_light</item>
+
+        <item name="actionBarSize">@dimen/app_toolbar_height</item>
+    </style>
+
+    <style name="app_theme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--给背景设置一张图片，不使用windowIsTranslucent 可同时解决activity跳转可以看到桌面和回退白屏问题-->
+        <item name="android:windowBackground">@mipmap/bg_white</item>
+        <!--<item name="android:orientation">vertical</item>-->
+        <!-- 设置全局menu字体颜色 -->
+        <item name="actionMenuTextColor">#ffffff</item>
+    </style>
+
+    <!--MenuItem字体大小颜色-->
+    <style name="MenuTextStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ACT_actionBarStyle" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/ACT_AS_titleTextAppearance</item>
+    </style>
+
+    <style name="ACT_toolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ACT_AS_titleTextAppearance</item>
+    </style>
+
+    <style name="ACT_AS_titleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="progressDialog" parent="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowBackground">@drawable/bg_dialog_background</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+    <style name="MIS_NO_ACTIONBAR" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <!-- 自定义对话框 -->
+    <style name="dialog_alert_bg" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <!-- 背景透明 -->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--FileSelect-->
+    <style name="MyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:height">500dp</item>
+        <item name="android:width">300dp</item>
+    </style>
+
+    <style name="fileThem" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/mActionBar</item>
+    </style>
+
+    <style name="mActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/app_colorPrimary</item>
+        <item name="android:backgroundStacked">@color/app_colorPrimary</item>
+        <item name="android:titleTextStyle">@style/actionBarTitle</item> <!--设置titleTextStyle-->
+    </style>
+
+    <style name="actionBarTitle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--自动升级-->
+    <style name="Theme.System.Alert" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <!-- popupWindowHelper -->
+    <style name="AnimationUpPopup">
+        <item name="android:windowEnterAnimation">@anim/grow_fade_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out_from_bottom</item>
+    </style>
+
+    <style name="AnimationFromButtom">
+        <item name="android:windowEnterAnimation">@anim/popup_form_bottom</item>
+        <item name="android:windowExitAnimation">@anim/drop_down_to_bottom</item>
+    </style>
+
+    <style name="AnimationFromTop">
+        <item name="android:windowEnterAnimation">@anim/drop_down_from_top</item>
+        <item name="android:windowExitAnimation">@anim/hide_to_top</item>
+    </style>
+
+    <!-- 调用系统相机的类设置该主题 防止拍完照后会先退到桌面再进入应用的activity 清单文件中设置 -->
+    <style name="NoBackgroundAndTitleMain" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/app_colorPrimary</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+</resources>

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\bg_circle_view_blue.xml",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\bg_circle_view_blue.xml"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\bg_circle_view_gray.xml",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\bg_circle_view_gray.xml"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\jpush_ic_richpush_actionbar_back.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\jpush_ic_richpush_actionbar_back.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\jpush_richpush_progressbar.xml"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\jpush_ic_richpush_actionbar_divider.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\jpush_ic_richpush_actionbar_divider.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\jpush_richpush_btn_selector.xml",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\jpush_richpush_btn_selector.xml"
+    }
+]

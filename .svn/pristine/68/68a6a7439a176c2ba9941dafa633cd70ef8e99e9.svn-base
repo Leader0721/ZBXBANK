@@ -1,0 +1,134 @@
+package com.zbxn.main.entity;
+
+import com.google.gson.annotations.Expose;
+
+/**
+ * @author: ysj
+ * @date: 2017-04-16 15:25
+ */
+public class BankMessageEntity {
+
+    /**
+     * MissionId : 18330def-6732-4659-a8e1-9fb9ef536b5d
+     * LoanApplyId : 242a5532-fc93-4032-8488-a43afd57a99b
+     * VersionId : f14b6262-2cf9-4c78-8eaf-25fa247763b5
+     * UploadDate : 2017-04-01 00:00:00
+     * StatusId : 2
+     * StatusName : 已通过
+     * CompanyName : QQQAAA
+     * BankName : 临淄农村商业银行
+     * ContacTel : 13533333333
+     * MessageType : 8
+     * CreationTime : 2017-04-15 12:10:05
+     */
+    @Expose
+    private String MissionId;
+    @Expose
+    private String LoanApplyId;
+    @Expose
+    private String VersionId;
+    @Expose
+    private String UploadDate;
+    @Expose
+    private int StatusId;
+    @Expose
+    private String StatusName;
+    @Expose
+    private String CompanyName;
+    @Expose
+    private String BankName;
+    @Expose
+    private String ContacTel;
+    @Expose
+    private int MessageType;
+    @Expose
+    private String CreationTime;
+
+    public String getMissionId() {
+        return MissionId;
+    }
+
+    public void setMissionId(String MissionId) {
+        this.MissionId = MissionId;
+    }
+
+    public String getLoanApplyId() {
+        return LoanApplyId;
+    }
+
+    public void setLoanApplyId(String LoanApplyId) {
+        this.LoanApplyId = LoanApplyId;
+    }
+
+    public String getVersionId() {
+        return VersionId;
+    }
+
+    public void setVersionId(String VersionId) {
+        this.VersionId = VersionId;
+    }
+
+    public String getUploadDate() {
+        return UploadDate;
+    }
+
+    public void setUploadDate(String UploadDate) {
+        this.UploadDate = UploadDate;
+    }
+
+    public int getStatusId() {
+        return StatusId;
+    }
+
+    public void setStatusId(int StatusId) {
+        this.StatusId = StatusId;
+    }
+
+    public String getStatusName() {
+        return StatusName;
+    }
+
+    public void setStatusName(String StatusName) {
+        this.StatusName = StatusName;
+    }
+
+    public String getCompanyName() {
+        return CompanyName;
+    }
+
+    public void setCompanyName(String CompanyName) {
+        this.CompanyName = CompanyName;
+    }
+
+    public String getBankName() {
+        return BankName;
+    }
+
+    public void setBankName(String BankName) {
+        this.BankName = BankName;
+    }
+
+    public String getContacTel() {
+        return ContacTel;
+    }
+
+    public void setContacTel(String ContacTel) {
+        this.ContacTel = ContacTel;
+    }
+
+    public int getMessageType() {
+        return MessageType;
+    }
+
+    public void setMessageType(int MessageType) {
+        this.MessageType = MessageType;
+    }
+
+    public String getCreationTime() {
+        return CreationTime;
+    }
+
+    public void setCreationTime(String CreationTime) {
+        this.CreationTime = CreationTime;
+    }
+}

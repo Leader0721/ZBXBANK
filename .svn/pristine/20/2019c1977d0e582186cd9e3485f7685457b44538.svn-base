@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view_stepview_left"
+            android:layout_width="26dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="@color/tvcc" />
+
+        <ImageView
+            android:id="@+id/img_stepview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_circle_view_gray" />
+
+        <View
+            android:id="@+id/view_stepview_right"
+            android:layout_width="26dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="@color/tvcc" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_stepview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_layout"
+        android:layout_centerHorizontal="true"
+        android:text="内容"
+        android:textColor="@color/tvc3"
+        android:textSize="12sp" />
+
+</RelativeLayout>

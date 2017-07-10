@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_bank"
+        style="@style/layout_style"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="银行"
+            android:textColor="@color/tvc6" />
+
+        <TextView
+            android:id="@+id/tv_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/parent_margin"
+            android:gravity="right"
+            android:hint="请选择申请银行"
+            android:textColor="@color/tvc6"
+            android:textColorHint="@color/tvc9"
+            android:textSize="@dimen/textsize_13" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="@dimen/parent_margin"
+            android:scaleType="centerInside"
+            android:src="@mipmap/bg_divider_1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/pub_line_color" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_name"
+        style="@style/layout_style"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="业务人员"
+            android:textColor="@color/tvc6" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/parent_margin"
+            android:gravity="right"
+            android:hint="请选择业务人员"
+            android:textColor="@color/tvc6"
+            android:textColorHint="@color/tvc9"
+            android:textSize="@dimen/textsize_13" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="@dimen/parent_margin"
+            android:scaleType="centerInside"
+            android:src="@mipmap/bg_divider_1" />
+
+    </LinearLayout>
+
+</LinearLayout>

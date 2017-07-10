@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <title>安全性认定-第一还款来源</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popModal.css"/>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/formText.js" type="text/javascript"></script>
+    <script src="js/popModal.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getJsonData(){
+            var jsonData = getJsonByForm();
+
+            return jsonData;
+        }
+
+        function saveData(submitType) {
+            if (!checkRegOfBank()) {
+                submitObject(getJsonData(), "ChinaRCB/AddInvestigateTwo", 0, 1);
+            }else{
+                alertMsg("请修改不符合规则的内容");
+            }
+        }
+
+        $(function(){
+            initFormFocus();
+            initSubmitStatus();
+            initBaseInfo();
+        });
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar mui-bar-nav">
+    <a class="mui-icon mui-pull-left" style="color: white;margin-left:4px;" href="javascript:goBack();"><img src="img/toolbar_back_white.png" width="24" height="24"></a>
+    <h1 class="mui-title">安全性认定-第一还款来源</h1>
+    <a id="saveStatus" class="mui-icon mui-btn-blue mui-btn-link mui-pull-right"
+       style="color: white; margin-right: 10px; margin-top:-7px"
+       href="javascript:saveData();"><img src="img/save.png" width="20" height="20"></a>
+</header>
+<form name="form">
+    <article class="content">
+        <section>
+            <div class="information" id="sourceInfo" style="margin-top: 0;">
+                <p>第一还款来源调查</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li><input type="text" id="ReportDate" readonly="readonly"/></li>
+                <li>较上年同期</li>
+            </ul>
+            <div class="content_text">
+                <span>总资产</span>
+                <input id="GeneralAssets" type="number" step="0.01"/>
+                <input id="GeneralAssets2" type="number" step="0.01"/>
+            </div>
+            <div class="content_text">
+                <span>流动资产</span>
+                <input id="CirculatingAssets" type="number" step="0.01">
+                <input id="CirculatingAssets2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>1.应收账款</span>
+                <input id="AccountsReceivable" type="number" step="0.01">
+                <input id="AccountsReceivable2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>2.其他应收款</span>
+                <input id="OtherReceived" type="number" step="0.01">
+                <input id="OtherReceived2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>3.存货</span>
+                <input id="Stock" type="number" step="0.01">
+                <input id="Stock2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>4.待摊费用</span>
+                <input id="DeferredExpenses" type="number" step="0.01">
+                <input id="DeferredExpenses2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>对外投资</span>
+                <input id="LongInvest" type="number" step="0.01">
+                <input id="LongInvest2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>总负债</span>
+                <input id="GrossLiabilities" type="number" step="0.01">
+                <input id="GrossLiabilities2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>流动负债</span>
+                <input id="CashLiabilities" type="number" step="0.01">
+                <input id="CashLiabilities2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>1.短期借款</span>
+                <input id="ShortBorrowed" type="number" step="0.01">
+                <input id="ShortBorrowed2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>2.应付票据</span>
+                <input id="PayableBill" type="number" step="0.01">
+                <input id="PayableBill2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>3.应付账款</span>
+                <input id="PayableAccount" type="number" step="0.01">
+                <input id="PayableAccount2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>销售收入</span>
+                <input id="MainTakeIn" type="number" step="0.01">
+                <input id="MainTakeIn2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>利润总额</span>
+                <input id="TotalInCome" type="number" step="0.01">
+                <input id="TotalInCome2" type="number" step="0.01">
+            </div>
+            <div class="content_text">
+                <span>或有负债</span>
+                <input id="ContingentLiability" type="number" step="0.01">
+                <input id="ContingentLiability2" type="number" step="0.01">
+            </div>
+        </section>
+        <section>
+            <div class="information" id="computeInfo">
+                <p>企业情况评价报表测算</p>
+            </div>
+            <div class="information" style="margin-top: 0;">
+                <p>一、信用履约评价</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li>报告期数值</li>
+                <li>上年度数值</li>
+            </ul>
+            <div class="content_text">
+                <span>利息偿还率</span>
+                <div class="ratio"><input id="InterestRepayment" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="InterestRepayment2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>到期贷款偿付率</span>
+                <div class="ratio"><input id="MaturityLoanRate" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="MaturityLoanRate2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>销售收入归社份额与贷款份额比</span>
+                <div class="ratio"><input id="SaleLoanRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="SaleLoanRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>存贷比</span>
+                <div class="ratio"><input id="DepositLoanRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="DepositLoanRatio2" type="number"><label>%</label></div>
+            </div>
+        </section>
+        <section>
+            <div class="information">
+                <p>二、偿债能力评价</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li>报告期数值</li>
+                <li>上年度数值</li>
+            </ul>
+            <div class="content_text">
+                <span>资产负债率</span>
+                <div class="ratio"><input id="AssetLiiabilityRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="AssetLiiabilityRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>流动比率</span>
+                <div class="ratio"><input id="CurrentRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="CurrentRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>速动比率</span>
+                <div class="ratio"><input id="QuickRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="QuickRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>经营活动净现金流量</span>
+                <input id="OperatingNetCashFlow" type="number">
+                <input id="OperatingNetCashFlow2" type="number">
+            </div>
+        </section>
+        <section>
+            <div class="information">
+                <p>三、盈利能力评价</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li>报告期数值</li>
+                <li>上年度数值</li>
+            </ul>
+            <div class="content_text">
+                <span>总资产报酬率</span>
+                <div class="ratio"><input id="TotalAssetReturnRatio" type="number"><label class="percentLabel">%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="TotalAssetReturnRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>销售利润率</span>
+                <div class="ratio"><input id="IncomeRatio" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="IncomeRatio2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>净资产收益率</span>
+                <div class="ratio"><input id="NetAssetReturnRation" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="NetAssetReturnRation2" type="number"><label>%</label></div>
+            </div>
+        </section>
+        <section>
+            <div class="information">
+                <p>四、经营能力评价</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li>报告期数值</li>
+                <li>上年度数值</li>
+            </ul>
+            <div class="content_text">
+                <span>流动资产周转次数</span>
+                <input id="CirculatingAssetsTurnoverCount" type="number" step="0.1">
+                <input id="CirculatingAssetsTurnoverCount2" type="number" step="0.1">
+            </div>
+            <div class="content_text">
+                <span>产成品销售率</span>
+                <div class="ratio"><input id="FinishedProductSaleRate" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="FinishedProductSaleRate2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>商品销售率</span>
+                <div class="ratio"><input id="MerchandiseSalesRate" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="MerchandiseSalesRate2" type="number"><label>%</label></div>
+            </div>
+            <div class="content_text">
+                <span>净资产增长率</span>
+                <div class="ratio"><input id="NetAssetsIncreaseRate" type="number"><label>%</label></div>
+                <div class="ratio" style="border-right: 0"><input id="NetAssetsIncreaseRate2" type="number"><label>%</label></div>
+            </div>
+        </section>
+        <section>
+            <div class="information">
+                <p>五、企业及领导人素质</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_inf">
+                <li>内容</li>
+                <li>报告期数值</li>
+                <li>上年度数值</li>
+            </ul>
+            <div class="content_text">
+                <span>领导人素质</span>
+                <input id="LeaderQuality">
+                <input id="LeaderQuality2">
+            </div>
+            <div class="content_text">
+                <span>管理素质</span>
+                <input id="ManageQuality">
+                <input id="ManageQuality2">
+            </div>
+            <div class="content_text">
+                <span>技术素质</span>
+                <input id="TechQuality">
+                <input id="TechQuality2">
+            </div>
+            <div class="content_text">
+                <span>市场定位</span>
+                <input id="MarketPosition">
+                <input id="MarketPosition2">
+            </div>
+        </section>
+
+        <div class="location">
+            <div class="basic">
+                <div><a href="javascript:scrollToPlace('#sourceInfo')">第一来源</a></div>
+            </div>
+            <div class="basic survey">
+                <div><a href="javascript:scrollToPlace('#computeInfo')">评价测算</a></div>
+            </div>
+            <a id="callPhone"><img class="basic phone" src="img/phone.png"/></a>
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        positionByScroll();
+        //				显示div
+        $(".location").show(300);
+        //				存储当前滚动高度
+        var Page = window.pageYOffset;
+        setTimeout(function () {
+            //					判断当前高度是否和存储的高度一致
+            if (Page == window.pageYOffset) {
+                //						隐藏div
+                $(".location").hide();
+            }
+        }, 4000);
+    });
+    initPositionById("sourceInfo","computeInfo");
+</script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+package com.zbxn.main.adapter;
+
+import android.content.Context;
+import android.text.Html;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.pub.utils.DateUtils;
+import com.pub.utils.StringUtils;
+import com.zbxn.R;
+import com.zbxn.main.entity.BankMessageEntity;
+
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+/**
+ * @author: ysj
+ * @date: 2017-04-16 15:41
+ */
+public class BankMessageAdapter extends BaseAdapter {
+
+    private Context mContext;
+    private List<BankMessageEntity> mList;
+    private SimpleDateFormat sdfYearMonth = new SimpleDateFormat("yyyy年MM月");
+    private int type;
+
+    public BankMessageAdapter(Context mContext, List<BankMessageEntity> mList, int type) {
+        this.mContext = mContext;
+        this.mList = mList;
+        this.type = type;
+    }
+
+    @Override
+    public int getCount() {
+        return mList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return mList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = View.inflate(mContext, R.layout.list_item_dynamic_message, null);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        holder.tvTagTime.setVisibility(View.GONE);
+        holder.tvReadtag.setVisibility(View.GONE);
+        BankMessageEntity entity = mList.get(position);
+        switch (entity.getMessageType()) {
+            case 5://新的单款申请消息提示
+                holder.tvTitle.setText(Html.fromHtml("<font color='#2799EF'>" + entity.getCompanyName() + "</font>"));
+                holder.tvValue.setText("提交了贷款申请");
+                holder.tvFlag.setVisibility(View.VISIBLE);
+                holder.tvFlag.setText(Html.fromHtml("<u>" + "查看详情" + "</u>"));
+                holder.tvTime.setText(DateUtils.fromTodaySimple(DateUtils.toDate(entity.getCreationDate())));
+                break;
+            case 6://报表收取提醒
+                holder.tvTitle.setText(Html.fromHtml("<font color='#2799EF'>" + entity.getCompanyName() + "</font>"));
+                holder.tvValue.setText(Html.fromHtml("上传" + "<font color='#2799EF'>" + sdfYearMonth.format(StringUtils.convertToDate(new SimpleDateFormat("yyyy-MM"), entity.getUploadDate())) + "</font>" + "财务报表"));
+                holder.tvFlag.setVisibility(View.VISIBLE);
+                holder.tvFlag.setText(Html.fromHtml("<u>" + "查看详情" + "</u>"));
+                holder.tvTime.setText(DateUtils.fromTodaySimple(DateUtils.toDate(entity.getCreationDate())));
+                break;
+            case 7://贷款申请批复
+                holder.tvTitle.setText(Html.fromHtml("<font color='#333333'>" + entity.getBankName() + "</font>"));
+                if (entity.getStatusId() == 2) {
+                    holder.tvValue.setText(Html.fromHtml("<font color='#8BC76B'>" + entity.getStatusName() + "</font>" + "您的企业" + "<font color='#333333'>" + entity.getCompanyName() + "</font>" + "的贷款申请"));
+                } else if (entity.getStatusId() == 3) {
+                    holder.tvValue.setText(Html.fromHtml("<font color='#c82b2a'>" + entity.getStatusName() + "</font>" + "您的企业" + "<font color='#333333'>" + entity.getCompanyName() + "</font>" + "的贷款申请"));
+                } else {
+                    holder.tvValue.setText(Html.fromHtml("<font color='#2799EF'>" + entity.getStatusName() + "</font>" + "您的企业" + "<font color='#333333'>" + entity.getCompanyName() + "</font>" + "的贷款申请"));
+                }
+                holder.tvFlag.setVisibility(View.VISIBLE);
+                holder.tvFlag.setText(Html.fromHtml("<u>" + "查看详情" + "</u>"));
+                holder.tvTime.setText(DateUtils.fromTodaySimple(DateUtils.toDate(entity.getCreationDate())));
+                break;
+            case 8://提交报表提醒
+                holder.tvTitle.setText(Html.fromHtml("<font color='#333333'>" + entity.getBankName() + "</font>"));
+                holder.tvValue.setMaxLines(2);
+                holder.tvValue.setSingleLine(false);
+                holder.tvValue.setText(Html.fromHtml("提醒您的企业" + "<font color='#333333'>" + entity.getCompanyName() + "</font>" + "上传" + "<font color='#2799EF'>" + sdfYearMonth.format(StringUtils.convertToDate(new SimpleDateFormat("yyyy-MM"), entity.getUploadDate())) + "</font>" + "财务报表"));
+                holder.tvFlag.setVisibility(View.VISIBLE);
+                holder.tvTime.setText(DateUtils.fromTodaySimple(DateUtils.toDate(entity.getCreationDate())));
+                holder.tvFlag.setText(Html.fromHtml("<u>" + "查看详情" + "</u>"));
+                break;
+        }
+        if (type == 0) {
+            holder.ivUserHead.setImageResource(R.mipmap.dynamic_agricole);
+        } else {
+            holder.ivUserHead.setImageResource(R.mipmap.dynamic_butler);
+        }
+        return convertView;
+    }
+
+    static class ViewHolder {
+        @BindView(R.id.tv_tag_time)
+        TextView tvTagTime;
+        @BindView(R.id.iv_userHead)
+        ImageView ivUserHead;
+        @BindView(R.id.tv_readtag)
+        TextView tvReadtag;
+        @BindView(R.id.tv_title)
+        TextView tvTitle;
+        @BindView(R.id.tv_value)
+        TextView tvValue;
+        @BindView(R.id.tv_time)
+        TextView tvTime;
+        @BindView(R.id.tv_flag)
+        TextView tvFlag;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
+}

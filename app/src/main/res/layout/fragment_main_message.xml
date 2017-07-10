@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    tools:context="com.zbxn.main.activity.MainMessageFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.pub.widget.smarttablayout.SmartTabLayout
+            android:id="@+id/mSmartTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:paddingBottom="2dp"
+            android:visibility="gone"
+            app:stl_customTabTextLayoutId="@layout/smarttab_textview"
+            app:stl_customTabTextViewId="@+id/textview_tabname"
+            app:stl_dividerColor="@color/pub_line_color"
+            app:stl_dividerThickness="@dimen/line_height"
+            app:stl_indicatorColor="@color/main_tab_text_blue"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="2dp"
+            app:stl_indicatorWidth="90dp"
+            app:stl_underlineThickness="0dp" />
+
+        <View
+            android:id="@+id/mTopShader"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:visibility="gone"
+            android:background="@color/pub_backgroud_color" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <com.pub.widget.FloatingActionButton.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="@dimen/parent_margin_large"
+        android:paddingRight="@dimen/parent_margin_large"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorNormal="#FF8C00"
+        fab:menu_colorPressed="#f7941f"
+        fab:menu_colorRipple="#00ffffff"
+        fab:menu_fab_size="normal"
+        fab:menu_icon="@mipmap/dynamic_gfsg"
+        fab:menu_labels_colorNormal="#FFFFFF"
+        fab:menu_labels_colorPressed="#FFFFFF"
+        fab:menu_labels_colorRipple="#FFFFFF"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_textColor="#333333"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up1"
+        fab:menu_shadowColor="@color/tranBlack"
+        fab:menu_shadowRadius="1dp"
+        fab:menu_shadowXOffset="0dp"
+        fab:menu_shadowYOffset="1dp"
+        fab:menu_showShadow="true">
+
+        <com.pub.widget.FloatingActionButton.FloatingActionButton
+            android:id="@+id/menu_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/publish"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/white"
+            app:fab_shadowColor="@color/app_divider"
+            app:fab_shadowRadius="4dp"
+            app:fab_shadowXOffset="1dp"
+            app:fab_shadowYOffset="2dp"
+            app:fab_showShadow="true"
+            fab:fab_colorRipple="@color/pub_backgroud_color"
+            fab:fab_label="发布消息"
+            fab:fab_size="mini" />
+
+        <com.pub.widget.FloatingActionButton.FloatingActionButton
+            android:id="@+id/menu_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/collect"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/white"
+            app:fab_shadowColor="@color/app_divider"
+            app:fab_shadowRadius="4dp"
+            app:fab_shadowXOffset="1dp"
+            app:fab_shadowYOffset="2dp"
+            app:fab_showShadow="true"
+            fab:fab_colorRipple="@color/pub_backgroud_color"
+            fab:fab_label="查看收藏"
+            fab:fab_size="mini" />
+
+    </com.pub.widget.FloatingActionButton.FloatingActionMenu>
+</RelativeLayout>

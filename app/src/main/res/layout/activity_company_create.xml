@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_company_create"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical"
+    tools:context="com.zbxn.main.activity.memberCenter.CompanyCreateActivity">
+    <com.zbxn.main.activity.memberCenter.ContainsEmojiEditText
+        android:layout_marginTop="@dimen/parent_margin_large"
+        android:paddingLeft="@dimen/parent_margin"
+        android:gravity="left|center"
+        android:id="@+id/et_Name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:layout_gravity="left"
+        android:background="@color/white"
+        android:clickable="true"
+        android:hint="请输入公司名字"
+        android:maxLength="32"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColor="@color/tvc3"
+        android:textColorHint="@color/tvcc"
+        android:textSize="@dimen/textsize_16" />
+</LinearLayout>

@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\xlistview_loading.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\xlistview_loading.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\fab_add.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\fab_add.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\nonews_search.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\nonews_search.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\toolbar_back.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\toolbar_back.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\stepview_select.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\stepview_select.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\ptr_rotate_arrow.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\ptr_rotate_arrow.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\toolbar_back_white.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\toolbar_back_white.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\circle_tran.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\circle_tran.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\stepview_circle.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\stepview_circle.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\userhead_img.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\userhead_img.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-hdpi-v4\\ic_launcher.png"
+    }
+]

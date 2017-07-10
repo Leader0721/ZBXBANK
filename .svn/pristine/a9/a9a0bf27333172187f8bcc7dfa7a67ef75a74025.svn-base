@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_theaters_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_theaters_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_insert_drive_file_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_insert_drive_file_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\right_yellow.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\right_yellow.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_folder_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_folder_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\transparent.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\transparent.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\loading_haoyouchengyuan.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\loading_haoyouchengyuan.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\watermark.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\watermark.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\loading_haoyouxiaoxi.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\loading_haoyouxiaoxi.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\loading_xiaoxi.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\loading_xiaoxi.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\loading_qiyetongshi.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\loading_qiyetongshi.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_album_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_album_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_check_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_check_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_insert_photo_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_insert_photo_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\dynamic_gfsg.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\dynamic_gfsg.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_close_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_close_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_folder_open_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_folder_open_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\loading_shuju.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\loading_shuju.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_check_white_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_check_white_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_description_black_48dp.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_description_black_48dp.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\right_blue.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\right_blue.png"
+    }
+]

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:background="@color/pub_backgroud_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/parent_margin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/parent_margin_large">
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/parent_margin"
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kuang_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/dynamic_company" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="50dp"
+                android:text=" "
+                android:textColor="@color/tvc6"
+                android:textSize="@dimen/textsize_14" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/parent_margin"
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kuang_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/dynamic_address" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="50dp"
+                android:text=" "
+                android:textColor="@color/tvc6"
+                android:textSize="@dimen/textsize_14" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/parent_margin"
+            android:id="@+id/ll_company"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kuang_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/dynamic_vocation" />
+
+            <TextView
+                android:id="@+id/tv_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="50dp"
+                android:text=" "
+                android:textColor="@color/tvc6"
+                android:textSize="@dimen/textsize_14" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/parent_margin"
+            android:id="@+id/ll_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kuang_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/dynamic_intro" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="50dp"
+                android:text=" "
+                android:textColor="@color/tvc6"
+                android:textSize="@dimen/textsize_14" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

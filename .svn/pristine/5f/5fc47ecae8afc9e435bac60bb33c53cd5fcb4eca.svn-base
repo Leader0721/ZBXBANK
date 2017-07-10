@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\xlistview_loading.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\xlistview_loading.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\loading_loop.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\loading_loop.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mis_default_check_s.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mis_default_check_s.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mis_ic_menu_back.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mis_ic_menu_back.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mis_selector_indicator.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mis_selector_indicator.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\loading_logo.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\loading_logo.png"
+    },
+    {
+        "merged": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mis_btn_back.png",
+        "source": "E:\\ZBXBANK03\\ZBXBANK\\pub\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mis_btn_back.png"
+    }
+]

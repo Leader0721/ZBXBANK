@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pub.widget.drowdownmenu.DropDownMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dropDownMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    app:ddmaskColor="@color/translucent_mask"
+    app:ddmenuBackgroundColor="@color/white"
+    app:ddmenuSelectedIcon="@mipmap/triangle_orange_up"
+    app:ddmenuTextSize="16sp"
+    app:ddmenuUnselectedIcon="@mipmap/triangle_orange_down"
+    app:ddneedSetSlectedColor="false"
+    app:ddtextSelectedColor="@color/orange"
+    app:ddtextUnselectedColor="@color/tvc6" />

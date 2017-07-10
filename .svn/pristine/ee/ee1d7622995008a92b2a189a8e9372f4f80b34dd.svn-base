@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第二担保人-基本信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popModal.css"/>
+    <link rel="stylesheet" type="text/css" href="css/switch.css"/>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/formText.js" type="text/javascript"></script>
+    <script src="js/popModal.js" type="text/javascript"></script>
+    <script src="js/switch.js" type="text/javascript"></script>
+    <script src="js/compute.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getJsonData(){
+            var arrayObj = createArrayObject("userFunds", allName("Date"), input("DateIndex"), input("MonetaryResources"),
+                    input("AccountsReceivable"), input("Stock"), input("CirculatingAssets"), input("FixedAssets"),
+                    input("GeneralAssets"), input("CashLiabilities"), input("GrossLiabilities"), input("OwnersEquity"),
+                    input("MainTakeIn"), input("MainCost"), input("MainIncome"), input("TotalInCome"), input("NetMargin"),
+                    input("BusinessExpenses"), input("ManageExpenses"), input("FinanceExpenses"), input("NetCashFlow"),
+                    input("OperatingNetCashFlow"), input("InvestNetCashFlow"), input("FinanceNetCashFlow"), input("ShortBorrowed"),
+                    input("PayableBill"), input("PayableAccount"), input("DepositReceived"), input("IncomeTax"),
+                    input("LongInvest"), input("OtherReceived"), input("PrepaidAccount"), input("AffectofExchangeRate"),
+                    input("CurrentRatio"), input("AssetLiiabilityRatio"), input("IncomeRatio"), input("AssetRation"),
+                    input("ReceivableTurnoverRate"), input("StockTurnoverRate"), input("QuickRatio"),
+                    input("TotalAssetReturnRatio"), input("NetAssetReturnRation"), input("CashFlowRight1"),
+                    input("CashFlowRight2"), input("InputRight"), input("AllRight"), input("OwnerShipRight"));
+            var jsonData = getJsonByForm(arrayObj);
+
+            return jsonData;
+        }
+
+        function saveData(submitType) {
+            if (!checkEmptyOfAll(submitType)) {
+                if (submitType) {
+                    submitObject(getJsonData(), "ChinaRCB/addGuarantorTwo", submitType, 1);
+                } else {
+                    submitString(getJsonData(), "ChinaRCB/AddDraft", submitType);
+                }
+            }else{
+                alertMsg("请完善必填信息");
+            }
+        }
+
+        function resetValue(){
+            matchObjectValue("{\"CompanyName\":\"23\",\"BussinessLicencesNo\":\"123\",\"Guaranty\":123,\"Address\":\"123\",\"BusinessLicencesExpire\":\"123\",\"MortgagedAssets\":123,\"RegisteredCapital\":\"123\",\"LowerNo\":123,\"CorporateRepresentative\":\"123\",\"IDCardNo\":\"37152119891201553X\",\"IsDirector\":123,\"EmployeeCount\":123,\"CreditRating\":\"123\",\"IsRightOfGuarntee\":0,\"OurLoan\":123,\"OurLoanLastYear\":123,\"CollateralName\":\"123\",\"IsUseAll\":1,\"AssessmentUnit\":\"123\",\"CollateralValue\":123,\"CollateralJudgment\":\"123\",\"IsCollateralLeased\":0,\"LeaseTerm\":\"123\",\"IsCompliance\":0,\"CollateralOriginalValue\":123,\"CollateralRate\":123,\"IsCollateralRegistration\":0,\"IsRepeatCollateral\":\"123\",\"IsList\":0,\"ChairmanName\":\"123\",\"ChairmanSex\":1,\"ChairmanEducation\":1,\"ChairmanIDCardNo\":\"37152119891201553X\",\"ChairmanBadRecords\":0,\"ChairmanTemure\":\"123\",\"ChairmanTel\":\"15562499177\",\"CEOName\":\"12\",\"CEOSex\":1,\"CEOEducation\":1,\"CEOIDCardNo\":\"371201287703237643\",\"CEOBadRecords\":0,\"CEOTemure\":\"123\",\"CEOTel\":\"15562499177\",\"FinanceName\":\"123\",\"FinanceSex\":1,\"FinanceEducation\":1,\"FinanceIDCardNo\":\"37152119891201553X\",\"FinanceBadRecords\":0,\"FinanceTemure\":\"123\",\"FinanceTel\":\"15562499177\",\"InputDate\":\"2017-04-24\",\"LoanUsage\":\"123\",\"LoanTerm\":\"123\",\"LoanMode\":\"123\",\"RepaymentMode\":\"123\",\"LoanAmountUpper\":\"123\",\"LoanAmountLower\":123,\"AnnualCreditAmount\":123,\"OurPromise\":123,\"LastOurPromise\":123,\"CreditNo\":\"123\",\"AnnualInsectionTime\":\"123\",\"OtherBankLoanAmount\":23,\"OtherBankPromise\":123,\"OurMediumAndLong\":123,\"Contacts\":\"123\",\"ContacTel\":\"15562499177\",\"OurCreditOther\":123,\"OtherBankOther\":123,\"LastMediumAndLong\":123,\"OurBasicAccountType\":\"0\",\"GeneralHouseHold\":1,\"NormalOfFive\":23,\"Follow\":12,\"Secondary\":123,\"EnterpriseType\":\"123\",\"InterestRepayment\":\"23\",\"MaturityLoanRate\":2,\"LeaderQuality\":\"12\",\"LargestContributor\":\"12\",\"InvestAmount\":123,\"IsNeedImportApproval\":213,\"BasicOpenBank\":\"123\",\"MainBussiness\":\"23\",\"ProductionLecenseNo\":\"123\",\"EnterpriseHistory\":\"23\",\"ProjectInfo\":\"123\",\"ProjectOverview\":\"123\",\"InvestmentSituation\":\"123\",\"userFunds\":[{\"Date\":\"2012年度\",\"DateIndex\":0,\"MonetaryResources\":123,\"AccountsReceivable\":123,\"Stock\":123,\"CirculatingAssets\":123,\"FixedAssets\":123,\"GeneralAssets\":2,\"CashLiabilities\":23,\"GrossLiabilities\":123,\"OwnersEquity\":123,\"MainTakeIn\":123,\"MainCost\":123,\"MainIncome\":123,\"TotalInCome\":123,\"NetMargin\":123,\"BusinessExpenses\":123,\"ManageExpenses\":123,\"FinanceExpenses\":123,\"NetCashFlow\":123,\"OperatingNetCashFlow\":23,\"InvestNetCashFlow\":123,\"FinanceNetCashFlow\":123,\"ShortBorrowed\":123,\"PayableBill\":123,\"PayableAccount\":123,\"DepositReceived\":123,\"IncomeTax\":123,\"LongInvest\":123,\"OtherReceived\":123,\"PrepaidAccount\":23,\"AffectofExchangeRate\":123,\"CurrentRatio\":123,\"AssetLiiabilityRatio\":123,\"IncomeRatio\":123,\"AssetRation\":123,\"ReceivableTurnoverRate\":123,\"StockTurnoverRate\":123,\"QuickRatio\":123,\"TotalAssetReturnRatio\":123,\"NetAssetReturnRation\":12,\"CashFlowRight1\":123,\"CashFlowRight2\":12,\"InputRight\":123,\"AllRight\":0,\"OwnerShipRight\":0},{\"Date\":\"2013年度\",\"DateIndex\":1,\"MonetaryResources\":2,\"AccountsReceivable\":23,\"Stock\":123,\"CirculatingAssets\":123,\"FixedAssets\":123,\"GeneralAssets\":123,\"CashLiabilities\":23,\"GrossLiabilities\":123,\"OwnersEquity\":123,\"MainTakeIn\":123,\"MainCost\":123,\"MainIncome\":123,\"TotalInCome\":23,\"NetMargin\":123,\"BusinessExpenses\":123,\"ManageExpenses\":123,\"FinanceExpenses\":123,\"NetCashFlow\":123,\"OperatingNetCashFlow\":123,\"InvestNetCashFlow\":123,\"FinanceNetCashFlow\":123,\"ShortBorrowed\":123,\"PayableBill\":123,\"PayableAccount\":123,\"DepositReceived\":123,\"IncomeTax\":123,\"LongInvest\":123,\"OtherReceived\":123,\"PrepaidAccount\":123,\"AffectofExchangeRate\":123,\"CurrentRatio\":123,\"AssetLiiabilityRatio\":123,\"IncomeRatio\":123,\"AssetRation\":123,\"ReceivableTurnoverRate\":123,\"StockTurnoverRate\":123,\"QuickRatio\":123,\"TotalAssetReturnRatio\":123,\"NetAssetReturnRation\":3123,\"CashFlowRight1\":123,\"CashFlowRight2\":123,\"InputRight\":123,\"AllRight\":0,\"OwnerShipRight\":0},{\"Date\":\"2014年度\",\"DateIndex\":2,\"MonetaryResources\":21323,\"AccountsReceivable\":23,\"Stock\":123,\"CirculatingAssets\":123,\"FixedAssets\":123,\"GeneralAssets\":123,\"CashLiabilities\":123,\"GrossLiabilities\":123,\"OwnersEquity\":123,\"MainTakeIn\":123,\"MainCost\":123,\"MainIncome\":123,\"TotalInCome\":123,\"NetMargin\":123,\"BusinessExpenses\":123,\"ManageExpenses\":123,\"FinanceExpenses\":123,\"NetCashFlow\":123,\"OperatingNetCashFlow\":123,\"InvestNetCashFlow\":123,\"FinanceNetCashFlow\":123,\"ShortBorrowed\":123,\"PayableBill\":123,\"PayableAccount\":123,\"DepositReceived\":123,\"IncomeTax\":123,\"LongInvest\":123,\"OtherReceived\":123,\"PrepaidAccount\":123,\"AffectofExchangeRate\":123,\"CurrentRatio\":123,\"AssetLiiabilityRatio\":123,\"IncomeRatio\":123,\"AssetRation\":123,\"ReceivableTurnoverRate\":123,\"StockTurnoverRate\":123,\"QuickRatio\":123,\"TotalAssetReturnRatio\":12,\"NetAssetReturnRation\":123,\"CashFlowRight1\":123,\"CashFlowRight2\":12,\"InputRight\":123,\"AllRight\":0,\"OwnerShipRight\":0},{\"Date\":\"2015年3月\",\"DateIndex\":3,\"MonetaryResources\":211123,\"AccountsReceivable\":123,\"Stock\":123,\"CirculatingAssets\":123,\"FixedAssets\":123,\"GeneralAssets\":23,\"CashLiabilities\":123,\"GrossLiabilities\":123,\"OwnersEquity\":123,\"MainTakeIn\":123,\"MainCost\":123,\"MainIncome\":123,\"TotalInCome\":123,\"NetMargin\":123,\"BusinessExpenses\":123,\"ManageExpenses\":123,\"FinanceExpenses\":123,\"NetCashFlow\":123,\"OperatingNetCashFlow\":123,\"InvestNetCashFlow\":123,\"FinanceNetCashFlow\":123,\"ShortBorrowed\":123,\"PayableBill\":123,\"PayableAccount\":123,\"DepositReceived\":123,\"IncomeTax\":123,\"LongInvest\":123,\"OtherReceived\":123,\"PrepaidAccount\":23,\"AffectofExchangeRate\":123,\"CurrentRatio\":123,\"AssetLiiabilityRatio\":123,\"IncomeRatio\":123,\"AssetRation\":123,\"ReceivableTurnoverRate\":123,\"StockTurnoverRate\":23,\"QuickRatio\":123,\"TotalAssetReturnRatio\":123,\"NetAssetReturnRation\":123,\"CashFlowRight1\":12,\"CashFlowRight2\":123,\"InputRight\":123,\"AllRight\":0,\"OwnerShipRight\":0},{\"Date\":\"上年同期\",\"DateIndex\":4,\"MonetaryResources\":23,\"AccountsReceivable\":23,\"Stock\":123,\"CirculatingAssets\":123,\"FixedAssets\":123,\"GeneralAssets\":23,\"CashLiabilities\":123,\"GrossLiabilities\":123,\"OwnersEquity\":123,\"MainTakeIn\":123,\"MainCost\":123,\"MainIncome\":123,\"TotalInCome\":123,\"NetMargin\":123,\"BusinessExpenses\":123,\"ManageExpenses\":123,\"FinanceExpenses\":123,\"NetCashFlow\":123,\"OperatingNetCashFlow\":123,\"InvestNetCashFlow\":123,\"FinanceNetCashFlow\":123,\"ShortBorrowed\":123,\"PayableBill\":123,\"PayableAccount\":123,\"DepositReceived\":123,\"IncomeTax\":123,\"LongInvest\":123,\"OtherReceived\":123,\"PrepaidAccount\":123,\"AffectofExchangeRate\":123,\"CurrentRatio\":123,\"AssetLiiabilityRatio\":12,\"IncomeRatio\":123,\"AssetRation\":123,\"ReceivableTurnoverRate\":123,\"StockTurnoverRate\":123,\"QuickRatio\":123,\"TotalAssetReturnRatio\":123,\"NetAssetReturnRation\":123,\"CashFlowRight1\":123,\"CashFlowRight2\":123,\"InputRight\":123,\"AllRight\":0,\"OwnerShipRight\":0}]}");
+        }
+
+        $(function(){
+            $("article").click(function(){  $("submitStatus").popModal().hide(); });
+            initFormFocus();
+            initSubmitStatus();
+            initTab();
+            //resetValue();
+        });
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar-multi mui-bar-nav">
+    <a class="mui-icon mui-pull-left" style="color: white;margin-left:4px;" href="javascript:goBack();"><img src="img/toolbar_back_white.png" width="24" height="24"></a>
+    <h1 class="mui-title">第二担保人</h1>
+    <div id="submitStatus" class="dHidden mui-icon mui-pull-right"
+         style="color: white; margin-right:10px">
+        <img src="img/more.png">
+        <div style="display: none;">
+            <div id="content">
+                <div class="popItem" id="saveForm">保存</div>
+                <div class="popItem" id="submitForm" style="border-bottom:0;">下一步</div>
+                <div class="popItem" id="showFirst" style="display: none;" onclick="pushStep(1)">借款人</div>
+                <div class="popItem" id="showSecond" style="display: none;" onclick="pushStep(2)">第一担保人</div>
+                <div class="popItem" id="showThird" style="display: none;" onclick="pushStep(4)">申请书</div>
+                <div class="popItem" id="showFour" style="display: none;" onclick="pushStep(5)">上传附件</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab">
+        <div class="financial">财务数据</div>
+        <div class="baseData">基本信息</div>
+        <div class="blueLine"></div>
+        <div class="blueLineBase"></div>
+    </div>
+</header>
+<form name="form">
+    <article class="content_multi">
+        <div id="financialData">
+            <section>
+                <div id="left_div">
+                    <div id="left_div1">
+                        <span>项目</span>
+                    </div>
+                    <div id="left_div2">
+                        <div>货币资金</div>
+                        <div>应收帐款</div>
+                        <div>存货</div>
+                        <div>流动资产</div>
+                        <div>固定资产合计</div>
+                        <div>资产总额</div>
+                        <div>流动负债</div>
+                        <div>总负债</div>
+                        <div>所有者权益</div>
+                        <div>主营业务收入</div>
+                        <div>主营业务成本</div>
+                        <div>主营业务利润</div>
+                        <div>利润总额</div>
+                        <div>净利润</div>
+                        <div>营业费用</div>
+                        <div>管理费用</div>
+                        <div>财务费用</div>
+                        <div>净现金流量</div>
+                        <div>经营性净现金流量</div>
+                        <div>投资活动净现金流量</div>
+                        <div>筹资活动净现金流量</div>
+                        <div>现金汇率变动影响</div>
+                        <div>短期借款</div>
+                        <div>应付票据</div>
+                        <div>应付账款</div>
+                        <div>预收账款</div>
+                        <div>所得税</div>
+                        <div>长期投资</div>
+                        <div>其他应收款</div>
+                        <div>预付账款</div>
+                        <div>流动比率</div>
+                        <div>资产负债率</div>
+                        <div>销售利润率</div>
+                        <div>资产利润率</div>
+                        <div>应收帐款周转率</div>
+                        <div>存货周转率</div>
+                        <div>速动比率</div>
+                        <div>总资产报酬率</div>
+                        <div>净资产收益率</div>
+                        <div>现金流量正确为0</div>
+                        <div>现金流量正确为0</div>
+                        <div>验证填写是否正确</div>
+                        <div>全填完为0则正确</div>
+                        <div>所有则权益正确0</div>
+                    </div>
+                </div>
+                <div id="right_div">
+                    <div id="right_div1">
+                        <div id="right_divx">
+                            <table id="right_table1" class="table table-bordered">
+                                <tr>
+                                    <th><select name="Date[]" class="dateSelect" ></select></th>
+                                    <th><select name="Date[]" class="dateSelect" ></select></th>
+                                    <th><select name="Date[]" class="dateSelect" ></select></th>
+                                    <th><input type="month" name="Date[]"  onchange="rangeMax(this)" title="rangeMaxDate" style="direction: rtl;"/></th>
+                                    <th><input type="text" name="Date[]" readonly/></th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="right_div2">
+                        <div class="content_text_five" style="display:none;">
+                            <span>隐藏内容</span>
+                            <input type="number" name="DateIndex[]" value="0"/>
+                            <input type="number" name="DateIndex[]" value="1"/>
+                            <input type="number" name="DateIndex[]" value="2"/>
+                            <input type="number" name="DateIndex[]" value="3"/>
+                            <input type="number" name="DateIndex[]" value="4"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="MonetaryResources[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="MonetaryResources[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="MonetaryResources[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="MonetaryResources[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="MonetaryResources[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="AccountsReceivable[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="AccountsReceivable[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="AccountsReceivable[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="AccountsReceivable[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="AccountsReceivable[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="Stock[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="Stock[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="Stock[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="Stock[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="Stock[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="CirculatingAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="CirculatingAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="CirculatingAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="CirculatingAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="CirculatingAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="FixedAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="FixedAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="FixedAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="FixedAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="FixedAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="GeneralAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="GeneralAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="GeneralAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="GeneralAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="GeneralAssets[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="CashLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="CashLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="CashLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="CashLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="CashLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="GrossLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="GrossLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="GrossLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="GrossLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="GrossLiabilities[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="OwnersEquity[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="OwnersEquity[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="OwnersEquity[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="OwnersEquity[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="OwnersEquity[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="MainTakeIn[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="MainTakeIn[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="MainTakeIn[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="MainTakeIn[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="MainTakeIn[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="MainCost[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="MainCost[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="MainCost[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="MainCost[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="MainCost[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="MainIncome[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="MainIncome[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="MainIncome[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="MainIncome[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="MainIncome[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="TotalInCome[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="TotalInCome[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="TotalInCome[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="TotalInCome[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="TotalInCome[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="NetMargin[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="NetMargin[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="NetMargin[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="NetMargin[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="NetMargin[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="BusinessExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="BusinessExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="BusinessExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="BusinessExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="BusinessExpenses[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="ManageExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ManageExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ManageExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ManageExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ManageExpenses[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="FinanceExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="FinanceExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="FinanceExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="FinanceExpenses[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="FinanceExpenses[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="NetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="NetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="NetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="NetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="NetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="OperatingNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="OperatingNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="OperatingNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="OperatingNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="OperatingNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="InvestNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="InvestNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="InvestNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="InvestNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="InvestNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="FinanceNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="FinanceNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="FinanceNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="FinanceNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="FinanceNetCashFlow[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="AffectofExchangeRate[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="AffectofExchangeRate[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="AffectofExchangeRate[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="AffectofExchangeRate[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="AffectofExchangeRate[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="ShortBorrowed[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ShortBorrowed[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ShortBorrowed[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ShortBorrowed[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="ShortBorrowed[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="PayableBill[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableBill[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableBill[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableBill[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableBill[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="PayableAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PayableAccount[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="DepositReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="DepositReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="DepositReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="DepositReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="DepositReceived[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="IncomeTax[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="IncomeTax[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="IncomeTax[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="IncomeTax[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="IncomeTax[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="LongInvest[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(0)"/>
+                            <input type="number" name="LongInvest[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(1)"/>
+                            <input type="number" name="LongInvest[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(2)"/>
+                            <input type="number" name="LongInvest[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(3)"/>
+                            <input type="number" name="LongInvest[]"  pattern="^-?\d+$" onkeyup="ctCurrentRatio(4)"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="OtherReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="OtherReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="OtherReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="OtherReceived[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="OtherReceived[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="PrepaidAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PrepaidAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PrepaidAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PrepaidAccount[]"  pattern="^-?\d+$"/>
+                            <input type="number" name="PrepaidAccount[]"  pattern="^-?\d+$"/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="CurrentRatio[]" readonly/>
+                            <input type="text" name="CurrentRatio[]" readonly/>
+                            <input type="text" name="CurrentRatio[]" readonly/>
+                            <input type="text" name="CurrentRatio[]" readonly/>
+                            <input type="text" name="CurrentRatio[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="AssetLiiabilityRatio[]" readonly/>
+                            <input type="text" name="AssetLiiabilityRatio[]" readonly/>
+                            <input type="text" name="AssetLiiabilityRatio[]" readonly/>
+                            <input type="text" name="AssetLiiabilityRatio[]" readonly/>
+                            <input type="text" name="AssetLiiabilityRatio[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="IncomeRatio[]" readonly/>
+                            <input type="text" name="IncomeRatio[]" readonly/>
+                            <input type="text" name="IncomeRatio[]" readonly/>
+                            <input type="text" name="IncomeRatio[]" readonly/>
+                            <input type="text" name="IncomeRatio[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="AssetRation[]" readonly/>
+                            <input type="text" name="AssetRation[]" readonly/>
+                            <input type="text" name="AssetRation[]" readonly/>
+                            <input type="text" name="AssetRation[]" readonly/>
+                            <input type="text" name="AssetRation[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="ReceivableTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="ReceivableTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="ReceivableTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="ReceivableTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="ReceivableTurnoverRate[]" step="0.01" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="StockTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="StockTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="StockTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="StockTurnoverRate[]" step="0.01" readonly/>
+                            <input type="number" name="StockTurnoverRate[]" step="0.01" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="QuickRatio[]" readonly/>
+                            <input type="text" name="QuickRatio[]" readonly/>
+                            <input type="text" name="QuickRatio[]" readonly/>
+                            <input type="text" name="QuickRatio[]" readonly/>
+                            <input type="text" name="QuickRatio[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="TotalAssetReturnRatio[]" readonly/>
+                            <input type="text" name="TotalAssetReturnRatio[]" readonly/>
+                            <input type="text" name="TotalAssetReturnRatio[]" readonly/>
+                            <input type="text" name="TotalAssetReturnRatio[]" readonly/>
+                            <input type="text" name="TotalAssetReturnRatio[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="text" name="NetAssetReturnRation[]" readonly/>
+                            <input type="text" name="NetAssetReturnRation[]" readonly/>
+                            <input type="text" name="NetAssetReturnRation[]" readonly/>
+                            <input type="text" name="NetAssetReturnRation[]" readonly/>
+                            <input type="text" name="NetAssetReturnRation[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="CashFlowRight1[]" readonly/>
+                            <input type="number" name="CashFlowRight1[]" readonly/>
+                            <input type="number" name="CashFlowRight1[]" readonly/>
+                            <input type="number" name="CashFlowRight1[]" readonly/>
+                            <input type="number" name="CashFlowRight1[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="CashFlowRight2[]" readonly/>
+                            <input type="number" name="CashFlowRight2[]" readonly/>
+                            <input type="number" name="CashFlowRight2[]" readonly/>
+                            <input type="number" name="CashFlowRight2[]" readonly/>
+                            <input type="number" name="CashFlowRight2[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="InputRight[]" readonly/>
+                            <input type="number" name="InputRight[]" readonly/>
+                            <input type="number" name="InputRight[]" readonly/>
+                            <input type="number" name="InputRight[]" readonly/>
+                            <input type="number" name="InputRight[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="AllRight[]" readonly/>
+                            <input type="number" name="AllRight[]" readonly/>
+                            <input type="number" name="AllRight[]" readonly/>
+                            <input type="number" name="AllRight[]" readonly/>
+                            <input type="number" name="AllRight[]" readonly/>
+                        </div>
+                        <div class="content_text_five">
+                            <input type="number" name="OwnerShipRight[]" readonly/>
+                            <input type="number" name="OwnerShipRight[]" readonly/>
+                            <input type="number" name="OwnerShipRight[]" readonly/>
+                            <input type="number" name="OwnerShipRight[]" readonly/>
+                            <input type="number" name="OwnerShipRight[]" readonly/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="borrowerInfo">
+            <section>
+                <div class="information" id="baseInfo" style="margin-top: 0">
+                    <p>第二担保人-基本信息</p>
+                </div>
+                <div class="input_normal">
+                    <label>企业全称</label><input class="right_input" type="text" id="CompanyName" />
+                </div>
+                <div class="input_normal">
+                    <label>营业执照号码</label><input class="right_input" type="text" id="BussinessLicencesNo" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>对外担保</label><input class="right_input" type="number" step="0.01" id="Guaranty" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>法定经营地址</label><input class="right_input" type="text" id="Address" />
+                </div>
+                <div class="input_normal">
+                    <label>营业执照有效期限</label><input class="right_input" type="text"
+                                                                  id="BusinessLicencesExpire" />
+                </div>
+                <div class="input_normal">
+                    <label>已抵押资产</label><input class="right_input" type="number" step="0.01" id="MortgagedAssets" />
+                </div>
+                <div class="input_normal">
+                    <label>注册资本(币种)</label><input class="right_input" type="text" id="RegisteredCapital"
+                                                                  />
+                </div>
+                <div class="input_normal">
+                    <label>小写数字</label><input class="right_input" type="number" step="0.01" id="LowerNo" />
+                </div>
+                <div class="input_normal">
+                    <label>法人代表</label><input class="right_input" type="text" id="CorporateRepresentative"
+                                                              />
+                </div>
+                <div class="input_normal">
+                    <label>身份证号</label><input class="right_input" type="text" id="IDCardNo"  pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+                </div>
+                <div class="input_normal">
+                    <label>是否董事会或股东会</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="IsDirector" >
+                </div>
+                <div class="input_normal">
+                    <label>人数</label><input class="right_input" type="number" id="EmployeeCount" />
+                </div>
+                <div class="input_normal">
+                    <label>信用等级</label><input class="right_input" type="text" id="CreditRating" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>是否具备借贷资格</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="IsRightOfGuarntee">
+                </div>
+                <div class="input_normal">
+                    <label>我社贷款</label><input class="right_input" type="number" step="0.01" id="OurLoan"  onkeyup="ctOurLoan()"/>
+                </div>
+                <div class="input_normal">
+                    <label>上年贷款</label><input class="right_input" type="number" step="0.01" id="OurLoanLastYear" placeholder="可不填"/>
+                </div>
+            </section>
+            <section>
+                <div class="information" id="collateral">
+                    <p>抵押项目</p>
+                </div>
+                <div class="input_normal">
+                    <label>抵押物名称</label><input class="right_input" type="text" id="CollateralName"
+                                                               placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>是否用全部资产抵押</label><input class="right_input" type="text" id="IsUseAll" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>评估单位</label><input class="right_input" type="text" id="AssessmentUnit"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>抵押物评估价值</label><input class="right_input" type="number" step="0.01" id="CollateralValue"
+                                                                 placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>抵押物变现能力判断</label><input class="right_input" type="text" id="CollateralJudgment"
+                                                                   placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>抵押物是否出租</label><input class="right_input" type="text" id="IsCollateralLeased" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>出租期限</label><input class="right_input" type="text" id="LeaseTerm"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>是否合规</label><input class="right_input" type="text" id="IsCompliance" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>抵押物原值</label><input class="right_input" type="number" step="0.01"
+                                                               id="CollateralOriginalValue" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>抵押率</label><input class="right_input" type="number" step="0.01" id="CollateralRate"
+                                                             placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>是否办理抵押登记</label><input class="right_input" type="text" id="IsCollateralRegistration" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>重复抵押</label><input class="right_input" type="text" id="IsRepeatCollateral" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>有否清单</label><input class="right_input" type="text" id="IsList" placeholder="可不填"/>
+                </div>
+            </section>
+            <section>
+                <div class="information" id="manager">
+                    <p>管理人员</p>
+                </div>
+                <div class="input_normal">
+                    <label>董事长姓名</label><input class="right_input" type="text" id="ChairmanName" />
+                </div>
+                <div class="input_normal">
+                    <label>性别</label>
+                    <select name="legalSex" class="right_select" id="ChairmanSex">
+                        <!--<option value="0">请选择</option>-->
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+                <div class="input_normal">
+                    <label>学历</label><select name="ChairmanEducation" class="right_select"
+                                                             id="ChairmanEducation">
+                    <option value="0">请选择</option>
+                    <option value="1">初中</option>
+                    <option value="2">高中</option>
+                    <option value="3">中专</option>
+                    <option value="4">大专</option>
+                    <option value="5">本科</option>
+                    <option value="6">研究生</option>
+                </select>
+                </div>
+                <div class="input_normal">
+                    <label>身份证号码</label><input class="right_input" type="text" id="ChairmanIDCardNo"
+                                                                pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+                </div>
+                <div class="input_normal">
+                    <label>有无不良记录</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="ChairmanBadRecords" >
+                </div>
+                <div class="input_normal">
+                    <label>任职年限</label><input class="right_input" type="number" id="ChairmanTemure" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>电话</label><input class="right_input" type="tel" id="ChairmanTel" placeholder="可不填" pattern="(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][34578][0-9]{9}$)"/>
+                </div>
+                <div class="input_normal">
+                    <label>总经理</label><input class="right_input" type="text" id="CEOName" />
+                </div>
+                <div class="input_normal">
+                    <label>性别</label>
+                    <select name="legalSex" class="right_select" id="CEOSex">
+                        <!--<option value="0">请选择</option>-->
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+                <div class="input_normal">
+                    <label>学历</label><select name="CEOEducation" class="right_select"
+                                                             id="CEOEducation">
+                    <option value="0">请选择</option>
+                    <option value="1">初中</option>
+                    <option value="2">高中</option>
+                    <option value="3">中专</option>
+                    <option value="4">大专</option>
+                    <option value="5">本科</option>
+                    <option value="6">研究生</option>
+                </select>
+                </div>
+                <div class="input_normal">
+                    <label>身份证号码</label><input class="right_input" type="text" id="CEOIDCardNo"  pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+                </div>
+                <div class="input_normal">
+                    <label>有无不良记录</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="CEOBadRecords" >
+                </div>
+                <div class="input_normal">
+                    <label>任职年限</label><input class="right_input" type="number" id="CEOTemure" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>电话</label><input class="right_input" type="text" id="CEOTel" placeholder="可不填" pattern="(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][34578][0-9]{9}$)"/>
+                </div>
+                <div class="input_normal">
+                    <label>财务主管</label><input class="right_input" type="text" id="FinanceName" />
+                </div>
+                <div class="input_normal">
+                    <label>性别</label>
+                    <select name="legalSex" class="right_select" id="FinanceSex">
+                        <!--<option value="0">请选择</option>-->
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+                <div class="input_normal">
+                    <label>学历</label><select name="FinanceEducation" class="right_select"
+                                                             id="FinanceEducation">
+                    <option value="0">请选择</option>
+                    <option value="1">初中</option>
+                    <option value="2">高中</option>
+                    <option value="3">中专</option>
+                    <option value="4">大专</option>
+                    <option value="5">本科</option>
+                    <option value="6">研究生</option>
+                </select>
+                </div>
+                <div class="input_normal">
+                    <label>身份证号码</label><input class="right_input" type="text" id="FinanceIDCardNo"
+                                                                pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+                </div>
+                <div class="input_normal">
+                    <label>有无不良记录</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="FinanceBadRecords" >
+                </div>
+                <div class="input_normal">
+                    <label>任职年限</label><input class="right_input" type="number" id="FinanceTemure" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>电话</label><input class="right_input" type="text" id="FinanceTel" placeholder="可不填" pattern="(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][34578][0-9]{9}$)"/>
+                </div>
+            </section>
+            <section id="otherProject">
+                <div class="information">
+                    <p>其他项目</p>
+                </div>
+                <div class="input_normal">
+                    <label>填写日期</label><input class="right_input" type="text" id="InputDate" readonly/>
+                </div>
+                <div class="input_normal">
+                    <label>借款用途</label><input class="right_input" type="text" id="LoanUsage" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>借款期限</label><input class="right_input" type="text" id="LoanTerm"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>贷款方式</label><input class="right_input" type="text" id="LoanMode"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>还款方式</label><input class="right_input" type="text" id="RepaymentMode"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>贷款金额大写(币种)</label><input class="right_input" type="text" id="LoanAmountUpper"
+                                                                    placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>小写数字</label><input class="right_input" type="number" step="0.01" id="LoanAmountLower"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>年度授信金额</label><input class="right_input" type="number" step="0.01" id="AnnualCreditAmount"
+                                                                placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>我社承兑</label><input class="right_input" type="number" step="0.01" id="OurPromise"  onkeyup="ctOtherBankPromise()"/>
+                </div>
+                <div class="input_normal">
+                    <label>上年我社承兑</label><input class="right_input" type="number" step="0.01" id="LastOurPromise" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>贷款卡号码</label><input class="right_input" type="text" id="CreditNo" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>年检时间</label><input class="right_input_date" type="date" id="AnnualInsectionTime"
+                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>他行贷款金额</label><input class="right_input" type="number" step="0.01" id="OtherBankLoanAmount"
+                                                placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>他行承兑</label><input class="right_input" type="number" step="0.01" id="OtherBankPromise"
+                                                              />
+                </div>
+                <div class="input_normal">
+                    <label>我社中长期</label><input class="right_input" type="number" step="0.01" id="OurMediumAndLong"
+                                               placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>联系人</label><input class="right_input" type="text" id="Contacts" />
+                </div>
+                <div class="input_normal">
+                    <label>联系电话</label><input class="right_input" type="tel" id="ContacTel"  pattern="(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][34578][0-9]{9}$)"/>
+                </div>
+                <div class="input_normal">
+                    <label>我社授信其他</label><input class="right_input" type="number" step="0.01" id="OurCreditOther"
+                                                placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>他行其他</label><input class="right_input" type="number" step="0.01" id="OtherBankOther"
+                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>上年中长期</label><input class="right_input" type="number" step="0.01" id="LastMediumAndLong"
+                                               placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>我社账户类型</label>
+                    <select name="legalSex" class="right_select" id="OurBasicAccountType">
+                        <option value="0">请选择</option>
+                        <option value="1">基本</option>
+                        <option value="2">一般</option>
+                    </select>
+                </div>
+                <div class="input_normal">
+                    <label>五级分类中正常</label><input class="right_input" type="number" step="0.01" id="NormalOfFive" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>关注</label><input class="right_input" type="number" step="0.01" id="Follow" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>次级</label><input class="right_input" type="number" step="0.01" id="Secondary" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>企业性质/类型</label><input class="right_input" type="text" id="EnterpriseType" />
+                </div>
+                <div class="input_normal">
+                    <label>利息偿还</label><input class="percent_input" type="number" id="InterestRepayment"
+                                              placeholder="可不填"/><label>%</label>
+                </div>
+                <div class="input_normal">
+                    <label>到期贷款偿付率</label><input class="percent_input" type="number" id="MaturityLoanRate" placeholder="可不填"/><label>%</label>
+                </div>
+                <div class="input_normal">
+                    <label>领导素质</label><input class="right_input" type="text" id="LeaderQuality" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>最大出资人</label><input class="right_input" type="text" id="LargestContributor" />
+                </div>
+                <div class="input_normal">
+                    <label>出资金额</label><input class="right_input" type="number" step="0.01" id="InvestAmount" />
+                </div>
+                <div class="input_normal">
+                    <label>是否需要进出口批文</label>
+                    <input class="mui-switch mui-switch-anim" type="checkbox" id="IsNeedImportApproval">
+                </div>
+                <div class="input_normal">
+                    <label>基本户开户行</label><input class="right_input" type="text" id="BasicOpenBank" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>主营业务</label><input class="right_input" type="text" id="MainBussiness" />
+                </div>
+                <div class="input_normal">
+                    <label>生产经营许可证号码</label><input class="right_input" type="text"
+                                                                   id="ProductionLecenseNo" />
+                </div>
+                <div class="input_normal">
+                    <label>企业历史沿革</label><input class="right_input" type="text" id="EnterpriseHistory" placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>项目信息</label><input class="right_input" type="text" id="ProjectInfo"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>项目概况</label><input class="right_input" type="text" id="ProjectOverview"
+                                                              placeholder="可不填"/>
+                </div>
+                <div class="input_normal">
+                    <label>出资情况</label><input class="right_input" type="text" id="InvestmentSituation"
+                                              placeholder="可不填"/>
+                </div>
+            </section>
+        </div>
+        <br/>
+        <div class="location">
+            <div class="basic">
+                <div><a href="javascript:scrollToPlace('#baseInfo',88)">基本信息</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#manager',88)">管理人员</a></div>
+            </div>
+            <div class="basic survey">
+                <div><a href="javascript:scrollToPlace('#otherProject',88)">其他项目</a></div>
+            </div>
+            <!--<img class="basic phone" src="img/phone.png"/>-->
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        if ($("#borrowerInfo").css("display")== 'block') {
+            positionByScroll();
+            $(".location").show(300);
+            var Page = window.pageYOffset;
+            setTimeout(function () {
+                if (Page == window.pageYOffset) {
+                    $(".location").hide();
+                }
+            }, 4000);
+        }
+    });
+
+    initPositionById("baseInfo","manager","otherProject");
+    initFormDate(5);
+    fixedHeaderTable();
+</script>
+</body>
+</html>

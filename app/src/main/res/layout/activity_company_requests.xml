@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pub_backgroud_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pub.widget.pulltozoomview.PullToZoomScrollViewEx
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:contentView="@layout/view_company_detail_content"
+            app:zoomView="@layout/view_company_detail_zoomview" />
+
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_margin="@dimen/parent_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/parent_margin"
+            android:paddingRight="@dimen/parent_margin"
+            android:src="@mipmap/toolbar_back_white" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/pub_line_color"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kuang_height"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_achieve"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textColor="@color/seekbarorange"
+            android:textSize="@dimen/textsize_16" />
+
+        <ImageView
+            android:layout_width="@dimen/line_height"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/parent_margin"
+            android:layout_marginTop="@dimen/parent_margin"
+            android:background="@color/pub_line_color" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ripple"
+            android:gravity="center"
+            android:text="同意"
+            android:textColor="@color/bg_textview_blue"
+            android:textSize="@dimen/textsize_16" />
+    </LinearLayout>
+
+</LinearLayout>

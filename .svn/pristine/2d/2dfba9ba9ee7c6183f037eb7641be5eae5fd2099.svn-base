@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>基本情况调查</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/switch.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popModal.css"/>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/formText.js" type="text/javascript"></script>
+    <script src="js/switch.js" type="text/javascript"></script>
+    <script src="js/popModal.js" type="text/javascript"></script>
+    <script src="js/compute.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function getJsonData() {
+            //分支机构
+            var arrayObj = createArrayObject("BranchOffice", input("ComName"), input("AmountMoney"), select("ComType"), input("BranchMoney"), input("Order"));
+
+            //财务指标
+            var finObj = createArrayObject("FinIndicator", input("Date"), input("ProjectAmount"), input("TotalLiabilities"), input("OwnersEquity")
+                    , input("SalesRevenue"), input("NetProfit"), input("NetCashFlow"), input("PaidAssets"), input("ExternalGuarantee"));
+
+            //融资情况
+            var cuObj = createArrayObject("CreditUnion", input("CuRmb"), input("CuForeign"), input("CuLoanType"));
+            var ofObj = createArrayObject("OtherFinancing", input("OfRmb"), input("OfForeign"), input("OfLoanType"));
+            var tfObj = createArrayObject("TotalFinancing", input("TfRmb"), input("TfForeign"), input("TfLoanType"));
+            var jsonData = getJsonByForm(arrayObj, finObj, cuObj, ofObj, tfObj);
+
+            return jsonData
+        }
+
+        function saveData(submitType) {
+            if (!checkRegOfBank()) {
+                submitObject(getJsonData(), "ChinaRCB/AddBaseInvestigate", 0);
+            } else {
+                alertMsg("请完善必填信息");
+            }
+        }
+
+        $(function () {
+            initFormFocus();
+            initSubmitStatus();
+            initBaseInfo();
+        });
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar mui-bar-nav">
+    <a class="mui-icon mui-pull-left" style="color: white;margin-left:4px;" href="javascript:goBack();"><img
+            src="img/toolbar_back_white.png" width="24" height="24"></a>
+    <h1 class="mui-title">基本情况调查</h1>
+    <a id="saveStatus" class="mui-icon mui-btn-blue mui-btn-link mui-pull-right"
+       style="color: white; margin-right: 10px; margin-top:-7px"
+       href="javascript:saveData();"><img src="img/save.png" width="20" height="20"></a>
+</header>
+<form name="form">
+    <article class="content">
+        <section id="baseInfo">
+            <div class="information" style="margin-top: 0">
+                <p>基本信息</p>
+            </div>
+            <div class="input_normal">
+                <label>借款人姓名</label><input class="right_input" type="text" id="BorrowerName"/>
+            </div>
+            <div class="input_normal">
+                <label>注册地址</label><input class="right_input" type="text" id="RegAddress"/>
+            </div>
+            <div class="input_normal">
+                <label>企业性质</label><input class="right_input" type="text" id="ComNature"/>
+            </div>
+            <div class="input_normal">
+                <label>主营业务</label><textarea class="right_textArea" rows="3" cols="3"
+                                             id="MainBusiness"></textarea>
+            </div>
+            <div class="input_normal">
+                <label>最大出资人</label>
+            </div>
+            <div class="input_normal">
+                <label>名称</label><input class="right_input" type="text" id="Investors"/>
+            </div>
+            <div class="input_normal">
+                <label>出资金额</label><input class="right_input" type="number" step="0.01" id="FundedCount"/>
+            </div>
+        </section>
+        <section id="comInfo">
+            <div class="information">
+                <p>企业概况</p>
+            </div>
+            <div class="input_normal">
+                <label>公司历史沿革</label>
+                <textarea class="history_input" name="" rows="3" cols="3" id="ComHistory"></textarea>
+            </div>
+        </section>
+        <section>
+            <div class="information">
+                <p style="font-size: 0.7rem">分支机构</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_info">
+                <li style="font-size: 0.7rem">机构名称</li>
+                <li style="font-size: 0.7rem">母公司出资额</li>
+                <li style="font-size: 0.7rem">公司性质</li>
+                <li style="font-size: 0.7rem">分子公司出资额</li>
+            </ul>
+            <div class="content_text_four">
+                <input type="text" name="ComName[]"/>
+                <input type="number" step="0.01" name="AmountMoney[]"/>
+                <div class="selectli">
+                    <select name="ComType[]">
+                        <!-- <option value="0">请选择</option> -->
+                        <option value="0">分公司</option>
+                        <option value="1">全资</option>
+                        <option value="2">控股</option>
+                        <option value="3">参股</option>
+                    </select>
+                </div>
+                <!--style="border-right: 0" 隐藏最后的竖线-->
+                <input type="number" step="0.01" name="BranchMoney[]" style="border-right: 0"/>
+                <input type="hidden" name="Order[]" value="0"/>
+            </div>
+            <div class="content_text_four">
+                <input type="text" name="ComName[]"/>
+                <input type="number" step="0.01" name="AmountMoney[]"/>
+                <div class="selectli">
+                    <select name="ComType[]">
+                        <!-- <option value="0">请选择</option> -->
+                        <option value="0">分公司</option>
+                        <option value="1">全资</option>
+                        <option value="2">控股</option>
+                        <option value="3">参股</option>
+                    </select>
+                </div>
+                <input type="number" step="0.01" name="BranchMoney[]" style="border-right: 0"/>
+                <input type="hidden" name="Order[]" value="1"/>
+            </div>
+            <div class="content_text_four">
+                <input type="text" name="ComName[]"/>
+                <input type="number" step="0.01" name="AmountMoney[]"/>
+                <div class="selectli">
+                    <select name="ComType[]">
+                        <!-- <option value="0">请选择</option> -->
+                        <option value="0">分公司</option>
+                        <option value="1">全资</option>
+                        <option value="2">控股</option>
+                        <option value="3">参股</option>
+                    </select>
+                </div>
+                <input type="number" step="0.01" name="BranchMoney[]" style="border-right: 0"/>
+                <input type="hidden" name="Order[]" value="2"/>
+            </div>
+            <div class="content_text_four">
+                <input type="text" name="ComName[]"/>
+                <input type="number" step="0.01" name="AmountMoney[]"/>
+                <div class="selectli">
+                    <select name="ComType[]">
+                        <!-- <option value="0">请选择</option> -->
+                        <option value="0">分公司</option>
+                        <option value="1">全资</option>
+                        <option value="2">控股</option>
+                        <option value="3">参股</option>
+                    </select>
+                </div>
+                <input type="number" step="0.01" name="BranchMoney[]" style="border-right: 0"/>
+                <input type="hidden" name="Order[]" value="3"/>
+            </div>
+            <div class="content_text_four">
+                <input type="text" name="ComName[]"/>
+                <input type="number" step="0.01" name="AmountMoney[]"/>
+                <div class="selectli">
+                    <select name="ComType[]">
+                        <!-- <option value="0">请选择</option> -->
+                        <option value="0">分公司</option>
+                        <option value="1">全资</option>
+                        <option value="2">控股</option>
+                        <option value="3">参股</option>
+                    </select>
+                </div>
+                <input type="number" step="0.01" name="BranchMoney[]" style="border-right: 0"/>
+                <input type="hidden" name="Order[]" value="4"/>
+            </div>
+        </section>
+        <section style="margin-top: 1rem; margin-bottom: 1rem" id="memberInfo">
+            <div class="information">
+                <p>主要经营管理人员基本情况</p>
+            </div>
+            <div style=" height: 2rem;margin-top: 1.5rem;">
+                <label>>法人代表</label>
+            </div>
+            <div class="input_normal">
+                <label>姓名</label><input class="right_input" type="text" id="LegalName"/>
+            </div>
+            <div class="input_normal">
+                <label>性别</label>
+                <select name="legalSex" class="right_select" id="LegalSex">
+                    <!--<option value="0">请选择</option>-->
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+            <div class="input_normal">
+                <label>学历</label><select name="legalEducation" class="right_select" id="LegalEducation">
+                <option value="0">请选择</option>
+                <option value="1">初中</option>
+                <option value="2">高中</option>
+                <option value="3">中专</option>
+                <option value="4">大专</option>
+                <option value="5">本科</option>
+                <option value="6">研究生</option>
+            </select>
+            </div>
+            <div class="input_normal">
+                <label>身份证号</label><input class="right_input" type="text" id="LegalIdCard" required
+                                          pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+            </div>
+            <div class="input_normal">
+                <label>有无重大不良记录</label>
+                <input class="mui-switch mui-switch-anim" type="checkbox" id="LegalRecord">
+            </div>
+            <div class="input_normal">
+                <label>任职年限</label><input class="right_input" type="number" id="LegalServeAge"/>
+            </div>
+            <div style=" height: 2rem;margin-top: 1.5rem;">
+                <label>>总经理</label>
+            </div>
+            <div class="input_normal">
+                <label>姓名</label><input class="right_input" type="text" id="ManagerName"/>
+            </div>
+            <div class="input_normal">
+                <label>性别</label><select name="ManagerSex" class="right_select" id="ManagerSex">
+                <!--<option value="0">请选择</option>-->
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+            </div>
+            <div class="input_normal">
+                <label>学历</label><select name="ManagerEducation" class="right_select"
+                                         id="ManagerEducation">
+                <option value="0">请选择</option>
+                <option value="1">初中</option>
+                <option value="2">高中</option>
+                <option value="3">中专</option>
+                <option value="4">大专</option>
+                <option value="5">本科</option>
+                <option value="6">研究生</option>
+            </select>
+            </div>
+            <div class="input_normal">
+                <label>身份证号</label><input class="right_input" type="text" id="ManagerIdCard" required
+                                          pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+            </div>
+            <div class="input_normal">
+                <label>有无重大不良记录</label>
+                <input class="mui-switch mui-switch-anim" type="checkbox" id="ManagerRecord">
+            </div>
+            <div class="input_normal">
+                <label>任职年限</label><input class="right_input" type="number" id="ManagerServeAge"/>
+            </div>
+            <div style=" height: 2rem;margin-top: 1.5rem;">
+                <label>>财务主管</label>
+            </div>
+            <div class="input_normal">
+                <label>姓名</label><input class="right_input" type="text" id="FinanceName"/>
+            </div>
+            <div class="input_normal">
+                <label>性别</label><select name="FinanceSex" class="right_select" id="financeSex">
+                <!--<option value="0">请选择</option>-->
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+            </div>
+            <div class="input_normal">
+                <label>学历</label><select name="FinanceEducation" class="right_select"
+                                         id="FinanceEducation">
+                <option value="0">请选择</option>
+                <option value="1">初中</option>
+                <option value="2">高中</option>
+                <option value="3">中专</option>
+                <option value="4">大专</option>
+                <option value="5">本科</option>
+                <option value="6">研究生</option>
+            </select>
+            </div>
+            <div class="input_normal">
+                <label>身份证号</label><input class="right_input" type="text" id="FinanceIdCard" required
+                                          pattern="^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$"/>
+            </div>
+            <div class="input_normal">
+                <label>有无重大不良记录</label>
+                <input class="mui-switch mui-switch-anim" type="checkbox" id="FinanceRecord">
+            </div>
+            <div class="input_normal">
+                <label>任职年限</label><input class="right_input" type="number" id="FinanceServeAge"/>
+            </div>
+        </section>
+        <section style="margin-bottom: 1rem" id="financeIndex">
+            <div class="information">
+                <p>近三年财务指标</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_info">
+                <li>项目/年份</li>
+                <li><input type="text" name="Date[]" disabled/></li>
+                <li><input type="text" name="Date[]" disabled/></li>
+                <li><input type="text" name="Date[]" disabled/></li>
+            </ul>
+            <div class="content_text_four">
+                <span>项目总额</span>
+                <input type="number" step="0.01" name="ProjectAmount[]"/>
+                <input type="number" step="0.01" name="ProjectAmount[]"/>
+                <input type="number" step="0.01" name="ProjectAmount[]"/>
+            </div>
+            <div class="content_text_four">
+                <span>负债总额</span>
+                <input type="number" step="0.01" name="TotalLiabilities[]"/>
+                <input type="number" step="0.01" name="TotalLiabilities[]"/>
+                <input type="number" step="0.01" name="TotalLiabilities[]"/>
+            </div>
+            <div class="content_text_four">
+                <span>所有者权益</span>
+                <input type="number" step="0.01" name="OwnersEquity[]"/>
+                <input type="number" step="0.01" name="OwnersEquity[]"/>
+                <input type="number" step="0.01" name="OwnersEquity[]"/>
+            </div>
+            <div class="content_text_four">
+                <span>销售收入</span>
+                <input type="number" step="0.01" name="SalesRevenue[]"/>
+                <input type="number" step="0.01" name="SalesRevenue[]"/>
+                <input type="number" step="0.01" name="SalesRevenue[]"/>
+            </div>
+            <div class="content_text_four">
+                <span>净利润</span>
+                <input type="number" step="0.01" name="NetProfit[]"/>
+                <input type="number" step="0.01" name="NetProfit[]"/>
+                <input type="number" step="0.01" name="NetProfit[]"/>
+            </div>
+            <div class="content_text_four">
+                <span>经营活动现金净流量</span>
+                <input type="number" step="0.01" name="NetCashFlow[]"/>
+                <input type="number" step="0.01" name="NetCashFlow[]"/>
+                <input type="number" step="0.01" name="NetCashFlow[]"/>
+            </div>
+            <div class="input_normal">
+                <label style="font-size:0.9rem">目前已抵押资产额</label><input class="right_input" type="number" step="0.01"
+                                                                       id="PaidAssets"/>
+            </div>
+            <div class="input_normal">
+                <label style="font-size:0.9rem">目前对外担保金额</label><input class="right_input" type="number" step="0.01"
+                                                                       id="ExternalGuarantee"/>
+            </div>
+        </section>
+        <section style="margin-bottom: 1rem" id="financingInfo">
+            <div class="information">
+                <p>融资情况</p>
+            </div>
+            <div style="height: 1rem;"></div>
+            <ul class="header_info_height">
+                <li>项目</li>
+                <li>
+                    <div class="liBottomTop">信用社</div>
+                    <div class="liBottomBox">本币</div>
+                    <div class="liBottomBox">外币</div>
+                </li>
+                <li>
+                    <div class="liBottomTop">其他金融机构</div>
+                    <div class="liBottomBox">本币</div>
+                    <div class="liBottomBox">外币</div>
+                </li>
+                <li>
+                    <div class="liBottomTop">合计</div>
+                    <div class="liBottomBox">本币</div>
+                    <div class="liBottomBox">外币</div>
+                </li>
+            </ul>
+            <div class="content_text_">
+                <span>贷款</span>
+                <input type="number" step="0.01" name="CuRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="CuForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfForeign[]" style="border-right: 0;" onkeyup="ctBasic()"/>
+                <input type="hidden" name="CuLoanType[]" value="0" onkeyup="ctBasic()"/>
+                <input type="hidden" name="OfLoanType[]" value="0" onkeyup="ctBasic()"/>
+                <input type="hidden" name="TfLoanType[]" value="0" onkeyup="ctBasic()"/>
+            </div>
+            <div class="content_text_">
+                <span>承兑</span>
+                <input type="number" step="0.01" name="CuRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="CuForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfForeign[]" style="border-right: 0;" onkeyup="ctBasic()"/>
+                <input type="hidden" name="CuLoanType[]" value="1" onkeyup="ctBasic()"/>
+                <input type="hidden" name="OfLoanType[]" value="1" onkeyup="ctBasic()"/>
+                <input type="hidden" name="TfLoanType[]" value="1" onkeyup="ctBasic()"/>
+            </div>
+            <div class="content_text_">
+                <span>贴现</span>
+                <input type="number" step="0.01" name="CuRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="CuForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfForeign[]" style="border-right: 0;" onkeyup="ctBasic()"/>
+                <input type="hidden" name="CuLoanType[]" value="2" onkeyup="ctBasic()"/>
+                <input type="hidden" name="OfLoanType[]" value="2" onkeyup="ctBasic()"/>
+                <input type="hidden" name="TfLoanType[]" value="2" onkeyup="ctBasic()"/>
+            </div>
+            <div class="content_text_">
+                <span>其它</span>
+                <input type="number" step="0.01" name="CuRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="CuForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfForeign[]" style="border-right: 0;" onkeyup="ctBasic()"/>
+                <input type="hidden" name="CuLoanType[]" value="3" onkeyup="ctBasic()"/>
+                <input type="hidden" name="OfLoanType[]" value="3" onkeyup="ctBasic()"/>
+                <input type="hidden" name="TfLoanType[]" value="3" onkeyup="ctBasic()"/>
+            </div>
+            <div class="content_text_">
+                <span>合计</span>
+                <input type="number" step="0.01" name="CuRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="CuForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="OfForeign[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfRmb[]" onkeyup="ctBasic()"/>
+                <input type="number" step="0.01" name="TfForeign[]" style="border-right: 0;" onkeyup="ctBasic()"/>
+                <input type="hidden" name="CuLoanType[]" value="4" onkeyup="ctBasic()"/>
+                <input type="hidden" name="OfLoanType[]" value="4" onkeyup="ctBasic()"/>
+                <input type="hidden" name="TfLoanType[]" value="4" onkeyup="ctBasic()"/>
+            </div>
+        </section>
+        <br/>
+        <div class="location">
+            <div class="basic">
+                <div><a href="javascript:scrollToPlace('#baseInfo')">基本信息</a></div>
+            </div>
+            <div class="basic survey">
+                <div><a href="javascript:scrollToPlace('#comInfo')">企业概况</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#memberInfo')">人员情况</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#financeIndex')">财务指标</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#financingInfo')">融资情况</a></div>
+            </div>
+            <a id="callPhone"><img class="basic phone" src="img/phone.png"/></a>
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        positionByScroll();
+//				显示div
+        $(".location").show(300);
+//				存储当前滚动高度
+        var Page = window.pageYOffset;
+        setTimeout(function () {
+//					判断当前高度是否和存储的高度一致
+            if (Page == window.pageYOffset) {
+//						隐藏div
+                $(".location").hide();
+            }
+        }, 4000);
+    });
+
+    initPositionById("baseInfo", "comInfo", "memberInfo", "financeIndex", "financingInfo");
+    initFormDate(3);
+</script>
+</body>
+</html>

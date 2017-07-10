@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>借款申请书</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popModal.css"/>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/formText.js" type="text/javascript"></script>
+    <script src="js/popModal.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function getJsonData() {
+            var arrayObj = createArrayObject("PaymentPlan", input("Date"), input("Amount"), input("Order"));
+            var arrayObj1 = createArrayObject("RepaymentPlan", input("Date1"), input("Amount1"), input("Order1"));
+            var jsonData = getJsonByForm(arrayObj, arrayObj1);
+
+            return jsonData;
+        }
+
+
+        function saveData(submitType) {
+            if (!checkEmptyOfAll(submitType)) {
+                if (submitType) {
+                    submitObject(getJsonData(), "ChinaRCB/addLoanApplication", submitType, 1);
+                } else {
+                    submitString(getJsonData(), "ChinaRCB/AddDraft", submitType);
+                }
+            } else {
+                alertMsg("请完善必填信息");
+            }
+        }
+
+        function resetValue() {
+            matchObjectValue("{\"ProjectName\":\"123\",\"OurLoanBanlance\":123,\"GuarantorFullName3\":\"123\",\"OwnersEquity\":123,\"GuarantorAddress2\":\"123\",\"CollateralCurrentValue1\":2,\"BankName\":\"TEST2\",\"MainCollateralName2\":\"123\",\"PledgeCurrentValue\":123,\"RepaymentSource\":\"123\",\"PledgeFullName\":\"123\",\"Liabilities\":123,\"GuarantorAddress3\":\"123\",\"Address\":\"123\",\"Assest\":123,\"PledgeAddress\":\"123\",\"CollateralCurrentValue2\":12,\"OtherLoanBanlace\":12,\"GuarantorAddress1\":\"123\",\"GuarantorFullName1\":\"123\",\"MortgagorFullName1\":\"1231\",\"MortgagorFullName2\":\"2\",\"LegalMan\":\"123\",\"AssetLiabilityRatio\":123,\"PaymentPlan\":[{\"Date\":\"2017-01-05 00:00:00\",\"Amount\":312},{\"Date\":\"2017-04-06 00:00:00\",\"Amount\":12},{\"Date\":\"2017-04-06 00:00:00\",\"Amount\":12312}],\"MortgagorAddress1\":\"2\",\"BusinessScope\":\"12\",\"LoanUsage\":\"123\",\"FullName\":\"123\",\"MainCollateralName1\":\"2\",\"LoanAmount\":\"123\",\"GuarantorFullName2\":\"123\",\"ProjectSummary\":\"123\",\"MortgagorAddress2\":\"123\",\"Contacts\":\"123\",\"RepaymentPlan\":[{\"Date1\":\"2017-04-06 00:00:00\",\"Amount1\":123123},{\"Date1\":\"2017-04-06 00:00:00\",\"Amount1\":1231},{\"Date1\":\"2017-04-06 00:00:00\",\"Amount1\":12312}],\"LoanTerm\":\"23\",\"MainPledgeName\":\"123\",\"LoanCardNo\":\"123213\",\"Promise\":null,\"ApplyDate\":\"2017-04-06 14:55:59\",\"ContactsTel\":\"15562499177\"}");
+        }
+
+        $(function () {
+            $("article").click(function () {
+                $("submitStatus").popModal().hide();
+            });
+            initFormFocus();
+            initSubmitStatus();
+            //resetValue();
+        });
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar mui-bar-nav">
+    <a class="mui-icon mui-pull-left" style="color: white;margin-left:4px;" href="javascript:goBack();"><img
+            src="img/toolbar_back_white.png" width="24" height="24"></a>
+    <h1 class="mui-title">借款申请书</h1>
+    <div id="submitStatus" class="dHidden mui-icon mui-pull-right"
+         style="color: white; margin-right:10px">
+        <img src="img/more.png">
+        <div style="display: none;">
+            <div id="content">
+                <div class="popItem" id="saveForm">保存</div>
+                <div class="popItem" id="submitForm" style="border-bottom:0;">下一步</div>
+                <div class="popItem" id="showFirst" style="display: none;" onclick="pushStep(1)">借款人</div>
+                <div class="popItem" id="showSecond" style="display: none;" onclick="pushStep(2)">第一担保人</div>
+                <div class="popItem" id="showThird" style="display: none;" onclick="pushStep(3)">第二担保人</div>
+                <div class="popItem" id="showFour" style="display: none;" onclick="pushStep(5)">上传附件</div>
+            </div>
+        </div>
+    </div>
+</header>
+<form name="form">
+    <article class="content">
+        <section>
+            <div class="information" id="baseInfo" style="margin-top: 0">
+                <p>申请人基本信息</p>
+            </div>
+            <div class="input_normal">
+                <label>借款申请人全称</label><input class="right_input" type="text" id="FullName" required/>
+            </div>
+            <div class="input_normal">
+                <label>经营地址</label><input class="right_input" type="text" id="Address" required/>
+            </div>
+            <div class="input_normal">
+                <label>贷款卡编码</label><input class="right_input" type="number" id="LoanCardNo" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>经营范围</label><input class="right_input" type="text" id="BusinessScope" required/>
+            </div>
+            <div class="input_normal">
+                <label>法定代表人</label><input class="right_input" type="text" id="LegalMan" required/>
+            </div>
+            <div class="input_normal">
+                <label>联系人</label><input class="right_input" type="text" id="Contacts" required/>
+            </div>
+            <div class="input_normal">
+                <label>联系电话</label><input class="right_input" type="tel" id="ContactsTel" required
+                                          pattern="(^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$)|(^0?[1][34578][0-9]{9}$)"/>
+            </div>
+            <div class="input_normal">
+                <label>资产</label><input class="right_input" type="number" step="0.01" step="0.01" id="Assest" required/>
+            </div>
+            <div class="input_normal">
+                <label>负债</label><input class="right_input" type="number" step="0.01" id="Liabilities" required/>
+            </div>
+            <div class="input_normal">
+                <label>所有者权益</label><input class="right_input" type="number" step="0.01" id="OwnersEquity" required/>
+            </div>
+            <div class="input_normal">
+                <label>资产负债率</label><input class="percent_input" type="number" id="AssetLiabilityRatio"
+                                           required/><label>%</label>
+            </div>
+        </section>
+        <section style=" height: 10rem;">
+            <div class="information" id="projectInfo">
+                <p>项目信息</p>
+            </div>
+            <div class="input_normal">
+                <label>项目名称</label><input class="right_input" type="text" id="ProjectName" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>项目概况</label>
+                <textarea class="history_input" name="" rows="3" cols="3" id="ProjectSummary"
+                          placeholder="可不填"></textarea>
+            </div>
+        </section>
+        <section>
+            <div class="information" id="loanInfo">
+                <p>申请借款信息</p>
+            </div>
+            <div class="input_normal">
+                <label>贷款社(行)贷款余额</label><input class="right_input" type="number" step="0.01" id="OurLoanBanlance"
+                                                required/>
+            </div>
+            <div class="input_normal">
+                <label>他行贷款余额</label><input class="right_input" type="number" step="0.01" id="OtherLoanBanlace"
+                                            placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>申请借款金额(大写)</label><input class="right_input" type="text" id="LoanAmount" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>还款资金来源</label><input class="right_input" type="text" id="RepaymentSource" required/>
+            </div>
+            <div class="input_normal">
+                <label>借款用途</label><input class="right_input" type="text" id="LoanUsage" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>借款期限</label><input class="right_input" type="text" id="LoanTerm" placeholder="可不填"/>
+            </div>
+            <div class="input_normal" style="height: 15rem;">
+                <label>用款计划</label>
+                <div class="header_loan">
+                    <ul>
+                        <li>日期</li>
+                        <li>金额</li>
+                    </ul>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order[]" value="0"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order[]" value="1"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order[]" value="2"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order[]" value="3"/>
+                    </div>
+                </div>
+            </div>
+            <div class="input_normal" style="height: 15rem;">
+                <label>还款计划</label>
+                <div class="header_loan">
+                    <ul>
+                        <li>日期</li>
+                        <li>金额</li>
+                    </ul>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date1[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount1[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order1[]" value="0"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date1[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount1[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order1[]" value="1"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date1[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount1[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order1[]" value="2"/>
+                    </div>
+                    <div class="content_text_loan">
+                        <input type="date" name="Date1[]" placeholder="可不填"/>
+                        <input type="number" step="0.01" name="Amount1[]" placeholder="可不填"/>
+                        <input type="hidden" name="Order1[]" value="3"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="information" id="guaranteeInfo">
+                <p>担保信息</p>
+            </div>
+            <div class="input_normal">
+                <label>抵押:</label>
+            </div>
+            <div class="input_normal">
+                <label>抵押人全称</label><input class="right_input" type="text" id="MortgagorFullName1" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="MortgagorAddress1" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>主要抵押物名称</label><input class="right_input" type="text" id="MainCollateralName1"
+                                             placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>现值</label><input class="right_input" type="number" step="0.01" id="CollateralCurrentValue1"
+                                        placeholder="可不填"/>
+            </div>
+
+            <div class="lineGray" style="margin-top: 1rem"></div>
+
+            <div class="input_normal">
+                <label>抵押人全称</label><input class="right_input" type="text" id="MortgagorFullName2" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="MortgagorAddress2" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>主要抵押物名称</label><input class="right_input" type="text" id="MainCollateralName2"
+                                             placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>现值</label><input class="right_input" type="number" step="0.01" id="CollateralCurrentValue2"
+                                        placeholder="可不填"/>
+            </div>
+
+            <div class="lineGray" style="margin-top: 1rem"></div>
+
+            <div class="input_normal">
+                <label>质押:</label>
+            </div>
+            <div class="input_normal">
+                <label>出质人全称</label><input class="right_input" type="text" id="PledgeFullName" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="PledgeAddress" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>主要质物名称</label><input class="right_input" type="text" id="MainPledgeName" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>现值</label><input class="right_input" type="number" step="0.01" id="PledgeCurrentValue"
+                                        placeholder="可不填"/>
+            </div>
+
+            <div class="lineGray" style="margin-top: 1rem"></div>
+
+            <div class="input_normal">
+                <label>保证:</label>
+            </div>
+            <div class="input_normal">
+                <label>保证人全称</label><input class="right_input" type="text" id="GuarantorFullName1"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="GuarantorAddress1"/>
+            </div>
+            <div class="input_normal">
+                <label>保证人全称</label><input class="right_input" type="text" id="GuarantorFullName2"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="GuarantorAddress2"/>
+            </div>
+            <div class="input_normal">
+                <label>保证人全称</label><input class="right_input" type="text" id="GuarantorFullName3" placeholder="可不填"/>
+            </div>
+            <div class="input_normal">
+                <label>地址</label><input class="right_input" type="text" id="GuarantorAddress3" placeholder="可不填"/>
+            </div>
+        </section>
+        <br/>
+        <div class="location">
+            <div class="basic">
+                <div><a href="javascript:scrollToPlace('#baseInfo')">基本信息</a></div>
+            </div>
+            <div class="basic survey">
+                <div><a href="javascript:scrollToPlace('#projectInfo')">项目信息</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#loanInfo')">借款信息</a></div>
+            </div>
+            <div class="basic people">
+                <div><a href="javascript:scrollToPlace('#guaranteeInfo')">担保信息</a></div>
+            </div>
+            <!--<img class="basic phone" src="img/phone.png"/>-->
+        </div>
+    </article>
+</form>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        positionByScroll();
+//				显示div
+        $(".location").show(300);
+//				存储当前滚动高度
+        var Page = window.pageYOffset;
+        setTimeout(function () {
+//					判断当前高度是否和存储的高度一致
+            if (Page == window.pageYOffset) {
+//						隐藏div
+                $(".location").hide();
+            }
+        }, 4000);
+    });
+
+    initPositionById("baseInfo", "projectInfo", "loanInfo", "guaranteeInfo");
+</script>
+</body>
+</html>

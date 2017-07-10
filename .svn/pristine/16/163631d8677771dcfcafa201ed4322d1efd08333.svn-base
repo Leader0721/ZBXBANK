@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting_change_psw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/parent_margin_large"
+    tools:context="com.zbxn.main.activity.memberCenter.SettingChangePSWActivity">
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:gravity="center_vertical"
+                android:id="@+id/et_PSW1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:clickable="true"
+                android:hint="请输入旧密码"
+                android:inputType="textPassword"
+                android:maxLength="32"
+                android:singleLine="true"
+                android:textColor="@color/tvc3"
+                android:textColorHint="@color/tvcc"
+                android:textSize="@dimen/textsize_16" />
+
+            <ImageView
+                android:id="@+id/iv_deletepsw1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/logon_cancel"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/psw_line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/pub_line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:gravity="center_vertical"
+                android:id="@+id/et_PSW2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:clickable="true"
+                android:hint="请输入新密码(8-20个字符或数字)"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/tvc3"
+                android:textColorHint="@color/tvcc"
+                android:textSize="@dimen/textsize_16" />
+
+            <ImageView
+                android:id="@+id/iv_deletepsw2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/logon_cancel"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/psw_line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/pub_line_color" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:gravity="center_vertical"
+                android:id="@+id/et_PSW3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:clickable="true"
+                android:hint="请再次输入新密码"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/tvc3"
+                android:textColorHint="@color/tvcc"
+                android:textSize="@dimen/textsize_16" />
+
+            <ImageView
+                android:id="@+id/iv_deletepsw3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/logon_cancel"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/psw_line3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/pub_line_color" />
+
+    </LinearLayout>
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/btNext"
+        android:background="@drawable/selector_btn_radius_blue"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@drawable/selector_tv_color_white"
+        android:textSize="@dimen/textsize_16"
+        android:text="完成" />
+</LinearLayout>
